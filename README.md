@@ -25,7 +25,7 @@ Looking for [English README.md](/README_ENGLISH.md)
 下载并`在 Xcode 中` `拖拽拷贝` `EBForeNotification` 文件夹至 Xcode 工程。
 
 ## 本地弹窗
-任意方法内调用
+在任意方法内调用以下任 1 行代码即可弹窗
 ```objc
 //AppDelegate.m
 #import "EBForeNotification.h"
@@ -46,7 +46,7 @@ Looking for [English README.md](/README_ENGLISH.md)
 
 
 ## 接收远程/本地推送后弹窗
-接收远程/本地推送后，在前台展示推送弹窗及声音。
+接收远程/本地推送后，自动在前台展示推送弹窗及声音。
 
 ```objc
 //AppDelegate.m
