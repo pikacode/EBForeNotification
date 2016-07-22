@@ -1,7 +1,7 @@
 # EBForeNotification
 Show the `Banners` and `Sounds` as the same as the system notifications on foreground. Get notification content and Handle click event.
 
-Support both simulator & iPhone build.
+Support iOS 7~10 beta, support both simulator & iPhone build.
 
 ## Display
 - The same UI with the system banner & sound
