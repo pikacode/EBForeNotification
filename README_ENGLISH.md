@@ -25,15 +25,6 @@ Actual effect：
 - 自带`点击事件`，点击可获取推送内容，进行相应页面跳转
 - 自带`上滑手势`，快速收起
 
-实际效果如下：
-
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.jpeg)
-
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.jpeg)
-
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot03.gif)
-
-
 ## Install
 Download and Drag `EBForeNotification` file folder into you Xcode project  will just be ok.
 
