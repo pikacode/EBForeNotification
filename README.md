@@ -15,9 +15,12 @@ Look for [English README.md](/README_ENGLISH.md)
 - 自带`上滑手势`，快速收起
 
 实际效果如下：
-[](/screenshot/screenshot01.jepg)
-[](/screenshot/screenshot02.jepg)
-[](/screenshot/screenshot03.gif)
+
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.jpeg)
+
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.jpeg)
+
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot03.gif)
 
 
 ## 安装
