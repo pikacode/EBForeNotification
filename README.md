@@ -24,10 +24,23 @@ Looking for [English README.md](/README_ENGLISH.md)
 ## 安装
 下载并`在 Xcode 中` `拖拽拷贝` `EBForeNotification` 文件夹至 Xcode 工程。
 
-## 处理推送
-在前台展示推送弹窗及声音。
+## 本地弹窗
+任意方法内调用
+```objc
+//AppDelegate.m
+#import "EBForeNotification.h"
+{...
+//普通弹窗
+[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}} soundID:1312];
 
-ps：自己定义一个`NSDictionary`传给该方法，也一样能够展示推送效果哦，例：`@{"aps":@{@"alert":"展示内容"}}`
+//带自定义参数的弹窗
+[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}, @"key1":@"value1", @"key2":@"value2"} soundID:1312];
+...}
+```
+
+
+## 接收推送后弹窗
+在前台展示推送弹窗及声音。
 
 ```objc
 //AppDelegate.m
@@ -85,10 +98,8 @@ iOS 系统自带的声音 id，系统级的推送服务默认使用的是`三全
 }
 ```
 
-## 自定义声音
+## 自定义声音的弹窗
 可以添加声音文件诸如 `my_sound.wav` 到 Xcode 工程中，并在弹窗时播放。
-
-ps：自己定义一个`NSDictionary`传给该方法，也一样能够展示推送效果哦，例：@{"aps":@{@"alert":"展示内容"}}
 
 
 ```objc
