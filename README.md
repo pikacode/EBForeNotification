@@ -16,11 +16,9 @@ Look for [English README.md](/README_ENGLISH.md)
 
 实际效果如下：
 
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.jpeg)
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.gif)
 
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.jpeg)
-
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot03.gif)
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.gif)
 
 
 ## 安装

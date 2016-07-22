@@ -13,11 +13,9 @@ Support both simulator and iPhone build.
 
 Actual effect：
 
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.jpeg)
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.gif)
 
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.jpeg)
-
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot03.gif)
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.gif)
 
 - 跟系统推送弹窗 UI 效果完全相同
 - 可以自动获取 App 的`应用名称`，`应用图标`
