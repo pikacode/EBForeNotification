@@ -11,13 +11,14 @@ Support both simulator and iPhone build.
 - click gesture, and handle
 - swipe gesture
 
-实际效果如下：
+Actual effect：
 
 ![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.jpeg)
 
 ![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.jpeg)
 
 ![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot03.gif)
+
 - 跟系统推送弹窗 UI 效果完全相同
 - 可以自动获取 App 的`应用名称`，`应用图标`
 - 弹窗时会自动隐藏系统状态栏、收起后自动显示系统状态栏
