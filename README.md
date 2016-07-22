@@ -27,7 +27,6 @@ Looking for [English README.md](/README_ENGLISH.md)
 ## 本地弹窗
 在任意方法内调用以下任 1 行代码即可弹窗
 ```objc
-//AppDelegate.m
 #import "EBForeNotification.h"
 {...
 //普通弹窗(系统声音)
