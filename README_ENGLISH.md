@@ -25,17 +25,17 @@ Call any 1 method below can show a banner on the frontest controller.
 ```objc
 //AppDelegate.m
 #import "EBForeNotification.h"
-//Normal Banner (system sound)
-[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}} soundID:1312];
+//show a system sound banner
+[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"banner content"}} soundID:1312];
 
-//Normal Banner (cunstom sound)
-[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}} customSound:@"my_sound.wav"];
+//show a cunstom sound banner
+[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"banner content"}} customSound:@"my_sound.wav"];
 
-//Banner with extra keys/values (system sound)
-[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}, @"key1":@"value1", @"key2":@"value2"} soundID:1312];
+//show a system sound banner with extra keys/values
+[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"banner content"}, @"key1":@"value1", @"key2":@"value2"} soundID:1312];
 
-//Banner with extra keys/values (cunstom sound)
-[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}, @"key1":@"value1", @"key2":@"value2"} customSound:@"my_sound.wav"];
+//show a cunstom sound banner with extra keys/values
+[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"banner content"}, @"key1":@"value1", @"key2":@"value2"} customSound:@"my_sound.wav"];
 ...}
 ```
 
