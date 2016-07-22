@@ -56,7 +56,7 @@ Add observer for `EBBannerViewDidClick`, get extra key/value to handle your cust
 
 Received notification:
 
-```json
+```
 {
     "aps":
     {
@@ -64,7 +64,7 @@ Received notification:
         "sound":"sound",
         "badge":"3"
     },
-        "key1":"jump1"  //custom define like this to jump
+        "key1":"jump1"  //customed like this to jump
 }
 ```
 
