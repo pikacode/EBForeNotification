@@ -81,7 +81,7 @@ Received notification:
         "sound":"sound",
         "badge":"3"
     },
-        "key1":"跳转页面1"  //自定义此字段以跳转到相应页面
+        "key1":"jump1"  //custom define like this to jump
 }
 ```
 
@@ -90,7 +90,7 @@ Add observer:
 ```objc
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eBBannerViewDidClick:) name:EBBannerViewDidClick object:nil];
 -(void)eBBannerViewDidClick:(NSNotification*)noti{
-    if(noti[@"key1" == @"跳转页面1"]){
+    if(noti[@"key1" == @"jump1"]){
         //jump to page 1
     }
 }
