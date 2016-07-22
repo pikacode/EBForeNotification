@@ -3,6 +3,38 @@ Show the `Banners` and `Sounds` as the same as the system notifications on foreg
 
 Support both simulator and iPhone build.
 
+## Display
+- The same UI with the system banner & sound
+- Auto get App name & App icon
+- Auto hide systm Status Bar and show
+- `time` & `drag leg` are the same color with current background
+- click gesture, and handle
+- swipe gesture
+
+实际效果如下：
+
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.jpeg)
+
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.jpeg)
+
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot03.gif)
+- 跟系统推送弹窗 UI 效果完全相同
+- 可以自动获取 App 的`应用名称`，`应用图标`
+- 弹窗时会自动隐藏系统状态栏、收起后自动显示系统状态栏
+- 自带推送声音
+- `时间`及下方`收拉条`的颜色跟当前页面的背景颜色相同
+- 自带`点击事件`，点击可获取推送内容，进行相应页面跳转
+- 自带`上滑手势`，快速收起
+
+实际效果如下：
+
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.jpeg)
+
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.jpeg)
+
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot03.gif)
+
+
 ## Install
 Download and Drag `EBForeNotification` file folder into you Xcode project  will just be ok.
 
