@@ -13,6 +13,7 @@ Looking for [English README.md](/README_ENGLISH.md)
 - `时间`及下方`收拉条`的颜色跟当前页面的背景颜色相同
 - 自带`点击事件`，点击可获取推送内容，进行相应页面跳转
 - 自带`上滑手势`，快速收起
+- 自动在处于最前端的 controller 上进行弹窗
 
 实际效果如下：
 
