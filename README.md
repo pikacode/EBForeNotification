@@ -1,2 +1,2 @@
 # EBForeNotification
-Support iOS Foreground Push Notification both Banner and Sound.
+Show the Banners and Sounds as the same as the system notifications on foreground.
