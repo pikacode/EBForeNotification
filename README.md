@@ -30,17 +30,23 @@ Looking for [English README.md](/README_ENGLISH.md)
 //AppDelegate.m
 #import "EBForeNotification.h"
 {...
-//普通弹窗
+//普通弹窗(系统声音)
 [EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}} soundID:1312];
 
-//带自定义参数的弹窗
+//普通弹窗(指定声音文件)
+[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}} customSound:@"my_sound.wav"];
+
+//带自定义参数的弹窗(系统声音)
 [EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}, @"key1":@"value1", @"key2":@"value2"} soundID:1312];
+
+//普通弹窗(指定声音文件)
+[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}, @"key1":@"value1", @"key2":@"value2"} customSound:@"my_sound.wav"];
 ...}
 ```
 
 
-## 接收推送后弹窗
-在前台展示推送弹窗及声音。
+## 接收远程/本地推送后弹窗
+接收远程/本地推送后，在前台展示推送弹窗及声音。
 
 ```objc
 //AppDelegate.m
@@ -49,16 +55,22 @@ Looking for [English README.md](/README_ENGLISH.md)
 //ios7 before
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo { 
 	...
-	//添加以下代码
+	//系统声音弹窗
     [EBForeNotification handleRemoteNotification:userInfo soundID:1312];
+    
+    //指定声音文件弹窗
+	[EBForeNotification handleRemoteNotification:userInfo customSound:@"my_sound.wav"];
     ...
 }
 
 //ios7 later  
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {    
 	...
-	//添加以下代码
+	//系统声音弹窗
     [EBForeNotification handleRemoteNotification:userInfo soundID:1312];
+    
+    //指定声音文件弹窗
+	[EBForeNotification handleRemoteNotification:userInfo customSound:@"my_sound.wav"];
     ...
     completionHandler(UIBackgroundFetchResultNewData);
 }
@@ -95,29 +107,6 @@ iOS 系统自带的声音 id，系统级的推送服务默认使用的是`三全
     if(noti[@"key1" == @"跳转页面1"]){
         //跳转到页面1
     }
-}
-```
-
-## 自定义声音的弹窗
-可以添加声音文件诸如 `my_sound.wav` 到 Xcode 工程中，并在弹窗时播放。
-
-
-```objc
-//ios7 before
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo { 
-	...
-	//add this line
-	[EBForeNotification handleRemoteNotification:userInfo customSound:@"my_sound.wav"];
-    ...
-}
-
-//ios7 later  
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {    
-	...
-	//add this line
-	[EBForeNotification handleRemoteNotification:userInfo customSound:@"my_sound.wav"];
-    ...
-    completionHandler(UIBackgroundFetchResultNewData);
 }
 ```
 
