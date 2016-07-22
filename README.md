@@ -1,13 +1,15 @@
 # EBForeNotification
-Show the Banners and Sounds as the same as the system notifications on foreground.
+Look for [English README](/README_ENGLISH.md)
 
-Support both simulator and iPhone build.
+在 App 处于前台时展示跟系统完全一样的推送`弹窗`和`声音`。获取推送内容，并且处理点击事件。
 
-## Install
-Drag `EBForeNotification` file folder into you Xcode project just be ok.
+同时支持`模拟器`及`真机`运行。
 
-## Handle notification
-To show banner and sound on foreground.
+## 安装
+下载并`在 Xcode 中``拖拽拷贝` `EBForeNotification` 文件夹至 Xcode 工程。
+
+## 处理推送
+在前台展示推送弹窗及声音。
 
 ```objc
 //AppDelegate.m
@@ -16,7 +18,7 @@ To show banner and sound on foreground.
 //ios7 before
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo { 
 	...
-	//add this line
+	//添加以下代码
     [EBForeNotification handleRemoteNotification:userInfo soundID:1312];
     ...
 }
@@ -24,17 +26,23 @@ To show banner and sound on foreground.
 //ios7 later  
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {    
 	...
-	//add this line
+	//添加以下代码
     [EBForeNotification handleRemoteNotification:userInfo soundID:1312];
     ...
     completionHandler(UIBackgroundFetchResultNewData);
 }
 ```
 
-## Listen Click
-Add observer for `EBBannerViewDidClick`, get extra key/value to handle your custom events, such as: `jump to some page when user clicked`.
+## soundID 参数
+iOS 系统自带的声音 id，系统级的推送服务默认使用的是`三全音`，id = 1312
 
-Received notification:
+其他系统声音 id 可以在这里查询到 [iOS Predefined sounds](http://iphonedevwiki.net/index.php/AudioServices#)
+
+
+## 监听并处理点击事件
+添加 `Observer` 监听 `EBBannerViewDidClick`，获取推送内容，通过推送时自定义的字段处理自己逻辑，如：跳转到对应页面等。
+
+接收到的推送内容类似以下：
 
 ```json
 {
@@ -48,19 +56,19 @@ Received notification:
 }
 ```
 
-Add observer:
+添加 `Observer` 获取自定义的字段，并处理：
 
 ```objc
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eBBannerViewDidClick:) name:EBBannerViewDidClick object:nil];
 -(void)eBBannerViewDidClick:(NSNotification*)noti{
     if(noti[@"key1" == @"跳转页面1"]){
-        //jump to page 1
+        //跳转到页面1
     }
 }
 ```
 
-## customSound
-U can add a sound file and pass a name like "my_sound.wav" to custom the sound, such as:
+## 自定义声音
+可以添加声音文件诸如 `my_sound.wav` 到 Xcode 工程中，并在弹窗时播放。
 
 ```objc
 //ios7 before
@@ -80,9 +88,4 @@ U can add a sound file and pass a name like "my_sound.wav" to custom the sound, 
     completionHandler(UIBackgroundFetchResultNewData);
 }
 ```
-
-## soundID
-Is iOS system sound id, default push notification sound "Tritone" is 1312
-
-More sound id to see here [iOS Predefined sounds](http://iphonedevwiki.net/index.php/AudioServices#)
 

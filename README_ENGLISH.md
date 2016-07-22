@@ -1,10 +1,10 @@
 # EBForeNotification
-Show the Banners and Sounds as the same as the system notifications on foreground.
+Show the `Banners` and `Sounds` as the same as the system notifications on foreground. Get notification content and Handle click event.
 
 Support both simulator and iPhone build.
 
 ## Install
-Drag `EBForeNotification` file folder into you Xcode project just be ok.
+Download and Drag `EBForeNotification` file folder into you Xcode project  will just be ok.
 
 ## Handle notification
 To show banner and sound on foreground.
@@ -30,6 +30,12 @@ To show banner and sound on foreground.
     completionHandler(UIBackgroundFetchResultNewData);
 }
 ```
+
+## Parma: soundID
+Is iOS system sound id, default push notification sound "Tritone" is 1312
+
+More sound id to see here [iOS Predefined sounds](http://iphonedevwiki.net/index.php/AudioServices#)
+
 
 ## Listen Click
 Add observer for `EBBannerViewDidClick`, get extra key/value to handle your custom events, such as: `jump to some page when user clicked`.
@@ -59,7 +65,7 @@ Add observer:
 }
 ```
 
-## customSound
+## Parma: customSound
 U can add a sound file and pass a name like "my_sound.wav" to custom the sound, such as:
 
 ```objc
@@ -80,9 +86,4 @@ U can add a sound file and pass a name like "my_sound.wav" to custom the sound, 
     completionHandler(UIBackgroundFetchResultNewData);
 }
 ```
-
-## soundID
-Is iOS system sound id, default push notification sound "Tritone" is 1312
-
-More sound id to see here [iOS Predefined sounds](http://iphonedevwiki.net/index.php/AudioServices#)
 
