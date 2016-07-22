@@ -1,5 +1,5 @@
 # EBForeNotification
-Look for [English README](/README_ENGLISH.md)
+Look for [English README.md](/README_ENGLISH.md)
 
 在 App 处于前台时展示跟系统完全一样的推送`弹窗`和`声音`。获取推送内容，并且处理点击事件。
 
