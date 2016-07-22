@@ -5,8 +5,21 @@ Look for [English README.md](/README_ENGLISH.md)
 
 同时支持`模拟器`及`真机`运行。
 
+## 效果
+- 跟系统推送弹窗 UI 效果完全相同
+- 可以自动获取 App 的`应用名称`，`应用图标`
+- 自带推送声音
+- `时间`及下方`收拉条`的颜色跟当前页面的背景颜色相同
+- 自带`点击事件`，点击可获取推送内容，进行相应页面跳转
+- 自带`上滑手势`，快速收起
+
+实际效果如下：
+[](/screenshot/screenshot01.png)
+[](/screenshot/screenshot02.png)
+
+
 ## 安装
-下载并`在 Xcode 中``拖拽拷贝` `EBForeNotification` 文件夹至 Xcode 工程。
+下载并`在 Xcode 中` `拖拽拷贝` `EBForeNotification` 文件夹至 Xcode 工程。
 
 ## 处理推送
 在前台展示推送弹窗及声音。
