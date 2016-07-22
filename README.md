@@ -3,7 +3,7 @@ Show the Banners and Sounds as the same as the system notifications on foregroun
 
 Support both simulator and iPhone build.
 
-## Usage
+## Install
 Drag `EBForeNotification` file folder into you Xcode project just be ok.
 
 ## Handle notification
@@ -38,8 +38,9 @@ Received notification:
 
 ```json
 {
+    "aps":
     {
-        "aps":"alert":"推送内容",
+        "alert":"推送内容",
         "sound":"sound",
         "badge":"3"
     },
@@ -57,8 +58,6 @@ Add observer:
     }
 }
 ```
-
-# Parameter
 
 ## customSound
 U can add a sound file and pass a name like "my_sound.wav" to custom the sound, such as:
