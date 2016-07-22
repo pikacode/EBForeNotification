@@ -8,7 +8,7 @@ Support iOS 7~10 beta, support both simulator & iPhone build.
 - Auto get App name & App icon
 - Auto hide systm Status Bar and show
 - `time` & `drag leg` are the same color with current background
-- click gesture, and handle
+- click gesture & handle it with notification info
 - swipe gesture
 
 Actual effect：
@@ -20,8 +20,27 @@ Actual effect：
 ## Install
 Download and Drag `EBForeNotification` file folder into you Xcode project  will just be ok.
 
-## Handle notification
-To show banner and sound on foreground.
+## Native Banner
+Call any 1 method below can show a banner on the frontest controller.
+```objc
+//AppDelegate.m
+#import "EBForeNotification.h"
+//Normal Banner (system sound)
+[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}} soundID:1312];
+
+//Normal Banner (cunstom sound)
+[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}} customSound:@"my_sound.wav"];
+
+//Banner with extra keys/values (system sound)
+[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}, @"key1":@"value1", @"key2":@"value2"} soundID:1312];
+
+//Banner with extra keys/values (cunstom sound)
+[EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}, @"key1":@"value1", @"key2":@"value2"} customSound:@"my_sound.wav"];
+...}
+```
+
+## Handle Remote/Local Notification
+When received, will show a banner & sound on foreground automatic.
 
 ```objc
 //AppDelegate.m
@@ -30,16 +49,22 @@ To show banner and sound on foreground.
 //ios7 before
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo { 
 	...
-	//add this line
-    [EBForeNotification handleRemoteNotification:userInfo soundID:1312];
+	//show a system sound banner
+	[EBForeNotification handleRemoteNotification:userInfo soundID:1312];
+
+	//show a cunstom sound banner
+	[EBForeNotification handleRemoteNotification:userInfo customSound:@"my_sound.wav"];
     ...
 }
 
 //ios7 later  
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {    
 	...
-	//add this line
-    [EBForeNotification handleRemoteNotification:userInfo soundID:1312];
+	//show a system sound banner
+	[EBForeNotification handleRemoteNotification:userInfo soundID:1312];
+
+	//show a cunstom sound banner
+	[EBForeNotification handleRemoteNotification:userInfo customSound:@"my_sound.wav"];
     ...
     completionHandler(UIBackgroundFetchResultNewData);
 }
@@ -79,25 +104,4 @@ Add observer:
 }
 ```
 
-## Parma: customSound
-U can add a sound file and pass a name like "my_sound.wav" to custom the sound, such as:
-
-```objc
-//ios7 before
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo { 
-	...
-	//add this line
-	[EBForeNotification handleRemoteNotification:userInfo customSound:@"my_sound.wav"];
-    ...
-}
-
-//ios7 later  
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {    
-	...
-	//add this line
-	[EBForeNotification handleRemoteNotification:userInfo customSound:@"my_sound.wav"];
-    ...
-    completionHandler(UIBackgroundFetchResultNewData);
-}
-```
-
+ 
