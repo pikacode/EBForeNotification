@@ -84,7 +84,7 @@ Received notification:
 {
     "aps":
     {
-        "alert":"推送内容",
+        "alert":"content",
         "sound":"sound",
         "badge":"3"
     },
