@@ -26,6 +26,7 @@ Looking for [English README.md](/README_ENGLISH.md)
 
 ## 处理推送
 在前台展示推送弹窗及声音。
+ps：自己定义一个`NSDictionary`传给该方法，也一样能够展示推送效果哦，例：`@{"aps":@{@"alert":"展示内容"}}`
 
 ```objc
 //AppDelegate.m
