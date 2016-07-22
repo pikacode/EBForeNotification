@@ -41,6 +41,8 @@ Call any 1 method below can show a banner on the frontest controller.
 ## Handle Remote/Local Notification
 When received, will show a banner & sound on foreground automatic.
 
+Call method in `AppDelegate.m`
+
 ```objc
 //AppDelegate.m
 #import "EBForeNotification.h"
