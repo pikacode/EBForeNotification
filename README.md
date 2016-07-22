@@ -47,6 +47,7 @@ Looking for [English README.md](/README_ENGLISH.md)
 
 ## 接收远程/本地推送后弹窗
 接收远程/本地推送后，自动在前台展示推送弹窗及声音。
+
 在 `AppDelegate.m` 中添加代码
 
 ```objc
