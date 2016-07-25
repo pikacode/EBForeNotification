@@ -45,7 +45,7 @@ QQ: 57380422
 //带自定义参数的弹窗(系统声音)
 [EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}, @"key1":@"value1", @"key2":@"value2"} soundID:1312];
 
-//普通弹窗(指定声音文件)
+//带自定义参数的弹窗(指定声音文件)
 [EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"展示内容"}, @"key1":@"value1", @"key2":@"value2"} customSound:@"my_sound.wav"];
 ...}
 ```
