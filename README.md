@@ -1,5 +1,7 @@
-# EBForeNotification
 Looking for [English README.md](/README_ENGLISH.md)
+
+QQ: 57380422
+# EBForeNotification
 
 在 App 处于前台时展示跟系统完全一样的推送`弹窗`和`声音`。获取推送内容，并且处理点击事件。
 
@@ -23,7 +25,11 @@ Looking for [English README.md](/README_ENGLISH.md)
 
 
 ## 安装
-下载并`在 Xcode 中` `拖拽拷贝` `EBForeNotification` 文件夹至 Xcode 工程。
+1. 下载并`在 Xcode 中` `拖拽拷贝` `EBForeNotification` 文件夹至 Xcode 工程。
+2. `targets` --> `Build Settings` --> 搜 `other link` --> 添加 `-ObjC`。
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/install.png)
+
+
 
 ## 本地弹窗
 在任意方法内调用以下任 1 行代码即可弹窗
