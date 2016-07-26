@@ -79,7 +79,7 @@ Call method in `AppDelegate.m`
 Is iOS system sound id, default push notification sound "Tritone" is 1312
 
 More sound id to see here [iOS Predefined sounds](http://iphonedevwiki.net/index.php/AudioServices#)
-
+or here [AudioServices sounds](http://www.cocoachina.com/bbs/read.php?tid=134344)
 
 ## Listen Click
 Add observer for `EBBannerViewDidClick`, get extra key/value to handle your custom events, such as: `jump to some page when user clicked`.
