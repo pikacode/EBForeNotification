@@ -88,7 +88,7 @@ QQ: 57380422
 iOS 系统自带的声音 id，系统级的推送服务默认使用的是`三全音`，id = 1312
 
 其他系统声音 id 可以在这里查询到 [iOS Predefined sounds](http://iphonedevwiki.net/index.php/AudioServices#)
-
+备用地址 [AudioServices sounds](http://www.cocoachina.com/bbs/read.php?tid=134344)
 
 ## 监听并处理点击事件
 添加 `Observer` 监听 `EBBannerViewDidClick`，获取推送内容，通过推送时自定义的字段处理自己逻辑，如：跳转到对应页面等。
