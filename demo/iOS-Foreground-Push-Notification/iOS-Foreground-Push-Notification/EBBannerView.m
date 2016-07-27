@@ -83,7 +83,13 @@
 }
 
 -(void)apperWithAnimation{
-    [EBBannerView appRootViewController].EBForegroundNotificationStatusBarHidden = YES;
+    if ([[EBBannerView appRootViewController] isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *controller = (UINavigationController*)[EBBannerView appRootViewController];
+        controller.EBForegroundNotificationStatusBarHidden = YES;
+        controller.childViewControllerForStatusBarHidden.EBForegroundNotificationStatusBarHidden = YES;
+    }else{
+        [EBBannerView appRootViewController].EBForegroundNotificationStatusBarHidden = YES;
+    }
     self.frame = CGRectMake(0, 0, BannerWidth, 0);
     [UIView animateWithDuration:BannerAnimationTime animations:^{
         self.frame = CGRectMake(0, 0, BannerWidth, BannerHeight);
@@ -99,7 +105,13 @@
     } completion:^(BOOL finished) {
         self.frame = CGRectMake(0, 0, BannerWidth, 0);
         [self removeFromSuperview];
-        [EBBannerView appRootViewController].EBForegroundNotificationStatusBarHidden = NO;
+        if ([[EBBannerView appRootViewController] isKindOfClass:[UINavigationController class]]) {
+            UINavigationController *controller = (UINavigationController*)[EBBannerView appRootViewController];
+            controller.childViewControllerForStatusBarHidden.EBForegroundNotificationStatusBarHidden = NO;
+            controller.EBForegroundNotificationStatusBarHidden = NO;
+        }else{
+            [EBBannerView appRootViewController].EBForegroundNotificationStatusBarHidden = YES;
+        }
         SharedBannerView = nil;
     }];
 }

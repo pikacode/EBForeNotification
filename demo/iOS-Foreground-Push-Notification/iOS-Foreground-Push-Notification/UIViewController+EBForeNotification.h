@@ -10,5 +10,4 @@
 
 @interface UIViewController (EBForeNotification)
 @property(nonatomic, assign)BOOL EBForegroundNotificationStatusBarHidden;
-
 @end
