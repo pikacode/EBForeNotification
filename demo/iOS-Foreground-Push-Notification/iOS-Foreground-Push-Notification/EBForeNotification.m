@@ -43,8 +43,9 @@ NSString *const EBBannerViewDidClick = @"EBBannerViewDidClick";
     if (soundID) {
         AudioServicesPlaySystemSound(soundID);
     }
-
-
+    if (SharedBannerView) {
+        SharedBannerView = nil;
+    }
     SharedBannerView = [[NSBundle mainBundle] loadNibNamed:@"EBBannerView" owner:nil options:nil].lastObject;
     UIViewController *controller = [EBForeNotification appRootViewController];
     SharedBannerView.userInfo = userInfo;
