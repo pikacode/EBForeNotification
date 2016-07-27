@@ -19,6 +19,10 @@ Actual effect：
 ![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.gif)
 
 ## Install
+### pod
+	pod "EBForeNotification"
+
+### manual	
 1. Download and Drag `EBForeNotification` file folder into you Xcode project.
 2. `targets` --> `Build Settings` --> search `other link` --> add `-ObjC`
 ![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/install.png)
@@ -110,4 +114,5 @@ Add observer:
 }
 ```
 
- 
+## Demo
+Download and run [EBForeNotification demo](/demo)

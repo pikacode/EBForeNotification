@@ -25,7 +25,11 @@ QQ: 57380422
 
 
 ## 安装
-1. 下载并`在 Xcode 中` `拖拽拷贝` `EBForeNotification` 文件夹至 Xcode 工程。
+### pod 安装
+	pod "EBForeNotification"
+
+### 手动 安装
+1. 下载并`在 Xcode 中` `拖拽拷贝` 根目录中的 `EBForeNotification` 文件夹至 Xcode 工程。
 2. `targets` --> `Build Settings` --> 搜 `other link` --> 添加 `-ObjC`。
 ![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/install.png)
 
@@ -119,3 +123,5 @@ iOS 系统自带的声音 id，系统级的推送服务默认使用的是`三全
 }
 ```
 
+## Demo
+下载运行 [EBForeNotification demo](/demo)
