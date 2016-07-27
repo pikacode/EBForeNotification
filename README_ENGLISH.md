@@ -20,7 +20,11 @@ Actual effect：
 
 ## Install
 ### pod
-	pod "EBForeNotification"
+	platform :ios, '7.0'
+
+	target "YourTargetName" do
+		pod 'EBForeNotification'
+	end
 
 ### manual	
 1. Download and Drag `EBForeNotification` file folder into you Xcode project.
