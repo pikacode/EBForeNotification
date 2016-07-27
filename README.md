@@ -26,7 +26,11 @@ QQ: 57380422
 
 ## 安装
 ### pod 安装
-	pod "EBForeNotification"
+	platform :ios, '7.0'
+
+	target "YourTargetName" do
+		pod 'EBForeNotification'
+	end
 
 ### 手动 安装
 1. 下载并`在 Xcode 中` `拖拽拷贝` 根目录中的 `EBForeNotification` 文件夹至 Xcode 工程。
