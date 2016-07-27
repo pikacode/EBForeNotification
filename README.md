@@ -28,7 +28,7 @@ QQ: 57380422
 ### pod 安装
 	platform :ios, '7.0'
 
-	target "YourTargetName" do
+	target 'YourTargetName' do
 		pod 'EBForeNotification'
 	end
 
