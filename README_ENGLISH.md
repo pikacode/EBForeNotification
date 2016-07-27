@@ -22,7 +22,7 @@ Actual effect：
 ### pod
 	platform :ios, '7.0'
 
-	target "YourTargetName" do
+	target 'YourTargetName' do
 		pod 'EBForeNotification'
 	end
 
