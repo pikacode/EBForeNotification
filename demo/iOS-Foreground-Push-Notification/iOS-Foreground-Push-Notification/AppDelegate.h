@@ -1,5 +1,5 @@
 //
-//  UIViewController+EBForeNotification.h
+//  AppDelegate.h
 //  iOS-Foreground-Push-Notification
 //
 //  Created by wuxingchen on 16/7/21.
@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (EBForeNotification)
-@property(nonatomic, assign)BOOL EBForegroundNotificationStatusBarHidden;
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
+
 
 @end
+
