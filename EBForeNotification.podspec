@@ -93,11 +93,11 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.source_files  = "Classes", "Classes/*.{h,m}"
+  s.source_files  = "EBForeNotification", "EBForeNotification/*.{h,m}"
 
   #s.exclude_files = "Classes/Exclude"
 
-  # s.public_header_files = "Classes/EBForeNotification.h"
+  s.public_header_files = "EBForeNotification/EBForeNotification.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -109,7 +109,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-   s.resources = "Classes/*.xib"
+   s.resources = "EBForeNotification/*.xib"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
