@@ -101,6 +101,12 @@
 -(void)removeWithAnimation{
     //anitamtion
     [UIView animateWithDuration:BannerAnimationTime animations:^{
+        for (UIView *view in self.subviews) {
+            CGRect frame = view.frame;
+            [view removeConstraints:view.constraints];
+            view.frame = frame;
+        }
+        [self removeConstraints:self.constraints];
         self.frame = CGRectMake(0, 0, BannerWidth, 0);
     } completion:^(BOOL finished) {
         self.frame = CGRectMake(0, 0, BannerWidth, 0);
