@@ -27,10 +27,7 @@ Actual effect：
 	end
 
 ### manual	
-1. Download and Drag `EBForeNotification` file folder into you Xcode project.
-2. `targets` --> `Build Settings` --> search `other link` --> add `-ObjC`
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/install.png)
-
+Download and Drag `EBForeNotification` file folder into you Xcode project.
 
 ## Native Banner
 Call any 1 method below can show a banner on the frontest controller.
@@ -117,6 +114,3 @@ Add observer:
     }
 }
 ```
-
-## Demo
-Download and run [EBForeNotification demo](/demo)
