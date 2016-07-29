@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(aaaaaa) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(aaaaaa) userInfo:nil repeats:NO];
 }
 
 -(void)aaaaaa{

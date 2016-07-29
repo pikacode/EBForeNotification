@@ -10,4 +10,6 @@
 
 @interface UIImage (ColorAtPoint)
 +(UIColor *)colorAtPoint:(CGPoint)point;
++(UIImage *)fullScreenshots;
++(UIColor*) getPixelColorAtLocation:(CGPoint)point withImage:(UIImage*) image;
 @end

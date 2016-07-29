@@ -23,12 +23,14 @@
 #define BannerHeight 70
 #define BannerWidth [UIScreen mainScreen].bounds.size.width
 
+UIWindow *originWindow;
+
 -(void)awakeFromNib{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarOrientationChange:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
-    self.userInfo = [NSDictionary dictionary];
     [self apperWithAnimation];
     [self addGestureRecognizer];
     self.windowLevel = UIWindowLevelAlert;
+    originWindow = [UIApplication sharedApplication].keyWindow;
     [self makeKeyAndVisible];
     [super awakeFromNib];
 }
@@ -54,10 +56,12 @@
     self.title_label.text   = appName;
     self.content_label.text = self.userInfo[@"aps"][@"alert"];
     self.time_label.text = EBBannerViewTimeText;
+    [originWindow makeKeyAndVisible];
     self.time_label.textColor      = [UIImage colorAtPoint:self.time_label.center];
     self.time_label.alpha = 0.7;
-    self.line_view.backgroundColor = [UIImage colorAtPoint:self.line_view.center];
-    self.line_view.alpha  = 0.7;
+    CGPoint lineCenter = self.line_view.center;
+    self.line_view.backgroundColor = [UIImage colorAtPoint:CGPointMake(lineCenter.x, lineCenter.y - 7)];
+    self.line_view.alpha = 0.5;
 }
 
 -(void)statusBarOrientationChange:(NSNotification *)notification{
