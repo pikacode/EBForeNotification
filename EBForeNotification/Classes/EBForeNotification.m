@@ -10,7 +10,6 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <UIKit/UIKit.h>
 #import "EBBannerView.h"
-#import "UIViewController+EBForeNotification.h"
 
 NSString *const EBBannerViewDidClick = @"EBBannerViewDidClick";
 
@@ -50,6 +49,7 @@ NSString *const EBBannerViewDidClick = @"EBBannerViewDidClick";
     UIViewController *controller = [EBForeNotification appRootViewController];
     SharedBannerView.userInfo = userInfo;
     [controller.view addSubview:SharedBannerView];
+    [controller.view setNeedsDisplay];
     [NSTimer scheduledTimerWithTimeInterval:BannerStayTime target:self selector:@selector(deleteBanner) userInfo:nil repeats:NO];
 }
 

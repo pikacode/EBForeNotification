@@ -8,11 +8,9 @@
 
 #import "EBBannerView.h"
 #import "EBForeNotification.h"
-#import "UIViewController+EBForeNotification.h"
 #import "UIImage+ColorAtPoint.h"
 
 @interface EBBannerView()
-
 @property (weak, nonatomic) IBOutlet UIImageView *icon_image;
 @property (weak, nonatomic) IBOutlet UILabel *title_label;
 @property (weak, nonatomic) IBOutlet UILabel *content_label;
@@ -30,6 +28,8 @@
     self.userInfo = [NSDictionary dictionary];
     [self apperWithAnimation];
     [self addGestureRecognizer];
+    self.windowLevel = UIWindowLevelAlert;
+    [self makeKeyAndVisible];
     [super awakeFromNib];
 }
 
@@ -83,13 +83,6 @@
 }
 
 -(void)apperWithAnimation{
-    if ([[EBBannerView appRootViewController] isKindOfClass:[UINavigationController class]]) {
-        UINavigationController *controller = (UINavigationController*)[EBBannerView appRootViewController];
-        controller.EBForegroundNotificationStatusBarHidden = YES;
-        controller.childViewControllerForStatusBarHidden.EBForegroundNotificationStatusBarHidden = YES;
-    }else{
-        [EBBannerView appRootViewController].EBForegroundNotificationStatusBarHidden = YES;
-    }
     self.frame = CGRectMake(0, 0, BannerWidth, 0);
     [UIView animateWithDuration:BannerAnimationTime animations:^{
         self.frame = CGRectMake(0, 0, BannerWidth, BannerHeight);
@@ -111,13 +104,6 @@
     } completion:^(BOOL finished) {
         self.frame = CGRectMake(0, 0, BannerWidth, 0);
         [self removeFromSuperview];
-        if ([[EBBannerView appRootViewController] isKindOfClass:[UINavigationController class]]) {
-            UINavigationController *controller = (UINavigationController*)[EBBannerView appRootViewController];
-            controller.childViewControllerForStatusBarHidden.EBForegroundNotificationStatusBarHidden = NO;
-            controller.EBForegroundNotificationStatusBarHidden = NO;
-        }else{
-            [EBBannerView appRootViewController].EBForegroundNotificationStatusBarHidden = YES;
-        }
         SharedBannerView = nil;
     }];
 }

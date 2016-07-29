@@ -11,7 +11,7 @@
 #define BannerStayTime 4.7
 #define BannerAnimationTime 0.3
 
-@interface EBBannerView : UIView
+@interface EBBannerView : UIWindow
 @property (nonatomic, retain)NSDictionary *userInfo;
 -(void)removeWithAnimation;
 @end
