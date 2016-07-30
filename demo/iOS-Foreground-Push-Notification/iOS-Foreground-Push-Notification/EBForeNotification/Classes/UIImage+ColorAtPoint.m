@@ -18,13 +18,9 @@
 
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
 
-
     if (!CGRectContainsPoint(CGRectMake(0.0f, 0.0f, viewImage.size.width, viewImage.size.height), point)) {
-
         return nil;
-
     }
-
 
     NSInteger pointX = trunc(point.x);
 
@@ -46,19 +42,7 @@
 
     unsigned char pixelData[4] = { 0, 0, 0, 0 };
 
-    CGContextRef context = CGBitmapContextCreate(pixelData,
-
-                                                 1,
-
-                                                 1,
-
-                                                 bitsPerComponent,
-
-                                                 bytesPerRow,
-
-                                                 colorSpace,
-
-                                                 kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+    CGContextRef context = CGBitmapContextCreate(pixelData, 1, 1, bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
 
     CGColorSpaceRelease(colorSpace);
 
@@ -85,6 +69,5 @@
     
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
-
 
 @end

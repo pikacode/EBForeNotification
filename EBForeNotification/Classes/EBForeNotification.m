@@ -10,7 +10,8 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <UIKit/UIKit.h>
 #import "EBBannerView.h"
-#import "UIViewController+EBForeNotification.h"
+#import "UIImage+ColorAtPoint.h"
+
 
 NSString *const EBBannerViewDidClick = @"EBBannerViewDidClick";
 

@@ -23,7 +23,6 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo { 
     // JPush sdk
-    [EBForeNotification handleRemoteNotification:userInfo customSound:@"my_Sound.wav"];
     [EBForeNotification handleRemoteNotification:userInfo soundID:1312];
 }
 
@@ -36,7 +35,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dddd:) name:EBBannerViewDidClick object:nil];
-
+    
     return YES;
 }
 

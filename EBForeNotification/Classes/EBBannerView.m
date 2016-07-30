@@ -8,11 +8,9 @@
 
 #import "EBBannerView.h"
 #import "EBForeNotification.h"
-#import "UIViewController+EBForeNotification.h"
 #import "UIImage+ColorAtPoint.h"
 
 @interface EBBannerView()
-
 @property (weak, nonatomic) IBOutlet UIImageView *icon_image;
 @property (weak, nonatomic) IBOutlet UILabel *title_label;
 @property (weak, nonatomic) IBOutlet UILabel *content_label;
@@ -25,11 +23,15 @@
 #define BannerHeight 70
 #define BannerWidth [UIScreen mainScreen].bounds.size.width
 
+UIWindow *originWindow;
+
 -(void)awakeFromNib{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarOrientationChange:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
-    self.userInfo = [NSDictionary dictionary];
     [self apperWithAnimation];
     [self addGestureRecognizer];
+    self.windowLevel = UIWindowLevelAlert;
+    originWindow = [UIApplication sharedApplication].keyWindow;
+    [self makeKeyAndVisible];
     [super awakeFromNib];
 }
 
@@ -54,10 +56,12 @@
     self.title_label.text   = appName;
     self.content_label.text = self.userInfo[@"aps"][@"alert"];
     self.time_label.text = EBBannerViewTimeText;
+    [originWindow makeKeyAndVisible];
     self.time_label.textColor      = [UIImage colorAtPoint:self.time_label.center];
     self.time_label.alpha = 0.7;
-    self.line_view.backgroundColor = [UIImage colorAtPoint:self.line_view.center];
-    self.line_view.alpha  = 0.7;
+    CGPoint lineCenter = self.line_view.center;
+    self.line_view.backgroundColor = [UIImage colorAtPoint:CGPointMake(lineCenter.x, lineCenter.y - 7)];
+    self.line_view.alpha = 0.5;
 }
 
 -(void)statusBarOrientationChange:(NSNotification *)notification{
@@ -83,13 +87,6 @@
 }
 
 -(void)apperWithAnimation{
-    if ([[EBBannerView appRootViewController] isKindOfClass:[UINavigationController class]]) {
-        UINavigationController *controller = (UINavigationController*)[EBBannerView appRootViewController];
-        controller.EBForegroundNotificationStatusBarHidden = YES;
-        controller.childViewControllerForStatusBarHidden.EBForegroundNotificationStatusBarHidden = YES;
-    }else{
-        [EBBannerView appRootViewController].EBForegroundNotificationStatusBarHidden = YES;
-    }
     self.frame = CGRectMake(0, 0, BannerWidth, 0);
     [UIView animateWithDuration:BannerAnimationTime animations:^{
         self.frame = CGRectMake(0, 0, BannerWidth, BannerHeight);
@@ -111,13 +108,6 @@
     } completion:^(BOOL finished) {
         self.frame = CGRectMake(0, 0, BannerWidth, 0);
         [self removeFromSuperview];
-        if ([[EBBannerView appRootViewController] isKindOfClass:[UINavigationController class]]) {
-            UINavigationController *controller = (UINavigationController*)[EBBannerView appRootViewController];
-            controller.childViewControllerForStatusBarHidden.EBForegroundNotificationStatusBarHidden = NO;
-            controller.EBForegroundNotificationStatusBarHidden = NO;
-        }else{
-            [EBBannerView appRootViewController].EBForegroundNotificationStatusBarHidden = YES;
-        }
         SharedBannerView = nil;
     }];
 }

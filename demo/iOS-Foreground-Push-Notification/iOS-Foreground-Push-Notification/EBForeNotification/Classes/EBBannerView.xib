@@ -99,7 +99,7 @@
                 <outlet property="time_label" destination="Zvg-9L-jbZ" id="Zqp-sX-vo1"/>
                 <outlet property="title_label" destination="SfK-LV-meM" id="tuy-Is-x7O"/>
             </connections>
-            <point key="canvasLocation" x="423" y="298.5"/>
+            <point key="canvasLocation" x="306" y="219.5"/>
         </view>
     </objects>
 </document>
