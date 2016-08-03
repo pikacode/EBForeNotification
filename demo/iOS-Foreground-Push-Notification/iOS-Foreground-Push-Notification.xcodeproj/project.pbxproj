@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0901F52012465E429D4C4EF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F65F450C6E72513995C5B87 /* CoreGraphics.framework */; };
+		0D10E0BC1D51C4D700DE58D2 /* UILabel+ContentSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D10E0BA1D51C4D700DE58D2 /* UILabel+ContentSize.h */; };
+		0D10E0BD1D51C4D700DE58D2 /* UILabel+ContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D10E0BB1D51C4D700DE58D2 /* UILabel+ContentSize.m */; };
 		0D7107FA1D4B909D00EACCCE /* EBBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7107F31D4B909D00EACCCE /* EBBannerView.h */; };
 		0D7107FB1D4B909D00EACCCE /* EBBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7107F41D4B909D00EACCCE /* EBBannerView.m */; };
 		0D7107FC1D4B909D00EACCCE /* EBBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7107F51D4B909D00EACCCE /* EBBannerView.xib */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D10E0BA1D51C4D700DE58D2 /* UILabel+ContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ContentSize.h"; sourceTree = "<group>"; };
+		0D10E0BB1D51C4D700DE58D2 /* UILabel+ContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ContentSize.m"; sourceTree = "<group>"; };
 		0D7107F31D4B909D00EACCCE /* EBBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBannerView.h; sourceTree = "<group>"; };
 		0D7107F41D4B909D00EACCCE /* EBBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBBannerView.m; sourceTree = "<group>"; };
 		0D7107F51D4B909D00EACCCE /* EBBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBBannerView.xib; sourceTree = "<group>"; };
@@ -86,8 +90,8 @@
 		0D7107F11D4B909D00EACCCE /* EBForeNotification */ = {
 			isa = PBXGroup;
 			children = (
-				0D7107F21D4B909D00EACCCE /* Classes */,
 				0D7107F91D4B909D00EACCCE /* EBForeNotification.h */,
+				0D7107F21D4B909D00EACCCE /* Classes */,
 			);
 			path = EBForeNotification;
 			sourceTree = "<group>";
@@ -101,6 +105,8 @@
 				0D7107F61D4B909D00EACCCE /* EBForeNotification.m */,
 				0D7107F71D4B909D00EACCCE /* UIImage+ColorAtPoint.h */,
 				0D7107F81D4B909D00EACCCE /* UIImage+ColorAtPoint.m */,
+				0D10E0BA1D51C4D700DE58D2 /* UILabel+ContentSize.h */,
+				0D10E0BB1D51C4D700DE58D2 /* UILabel+ContentSize.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -182,6 +188,7 @@
 				0D7107FE1D4B909D00EACCCE /* UIImage+ColorAtPoint.h in Headers */,
 				0D7108001D4B909D00EACCCE /* EBForeNotification.h in Headers */,
 				0D7107FA1D4B909D00EACCCE /* EBBannerView.h in Headers */,
+				0D10E0BC1D51C4D700DE58D2 /* UILabel+ContentSize.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +269,7 @@
 			files = (
 				0D8698471D40989000AEE574 /* ViewController.m in Sources */,
 				0D7107FD1D4B909D00EACCCE /* EBForeNotification.m in Sources */,
+				0D10E0BD1D51C4D700DE58D2 /* UILabel+ContentSize.m in Sources */,
 				0D7107FB1D4B909D00EACCCE /* EBBannerView.m in Sources */,
 				0D8698441D40989000AEE574 /* AppDelegate.m in Sources */,
 				0D8698411D40989000AEE574 /* main.m in Sources */,

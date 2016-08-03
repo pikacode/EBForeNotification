@@ -4,19 +4,31 @@ Show the `Banners` and `Sounds` as the same as the system notifications on foreg
 
 Support iOS 7~10 beta, support both simulator & iPhone build.
 
+## New Feature
+- swipe down gesture
+- iOS 10 banner style，example（iOS 10 style not support `swipe down gesture` and `multi-line` yet）：
+
+	```objc
+	[EBForeNotification handleRemoteNotification:userInfo soundID:soundID isIos10:YES];
+}
+
+	[EBForeNotification handleRemoteNotification:userInfo customSound:soundName isIos10:YES];
+	```
+	
 ## Display
 - The same UI with the system banner & sound
 - Auto get App name & App icon
 - Auto hide systm Status Bar and show
 - `time` & `drag leg` are the same color with current background
 - click gesture & handle it with notification info
-- swipe gesture
+- swipe up gesture
+- swipe down gesture
 
 Actual effect：
 
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot03.gif)
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.gif)
 
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot04.gif)
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.gif)
 
 ## Install
 ### pod
