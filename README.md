@@ -13,8 +13,7 @@ QQ: 57380422
 
 	```objc
 	[EBForeNotification handleRemoteNotification:userInfo soundID:soundID isIos10:YES];
-}
-
+	//或
 	[EBForeNotification handleRemoteNotification:userInfo customSound:soundName isIos10:YES];
 	```
 
