@@ -50,10 +50,7 @@ QQ: 57380422
 	end
 
 ### 手动 安装
-1. 下载并`在 Xcode 中` `拖拽拷贝` 根目录中的 `EBForeNotification` 文件夹至 Xcode 工程。
-2. `targets` --> `Build Settings` --> 搜 `other link` --> 添加 `-ObjC`。
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/install.png)
-
+下载并`在 Xcode 中` `拖拽拷贝` 根目录中的 `EBForeNotification` 文件夹至 Xcode 工程。
 
 
 ## 本地弹窗
