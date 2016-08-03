@@ -33,6 +33,7 @@ Download and Drag `EBForeNotification` file folder into you Xcode project.
 Call any 1 method below can show a banner on the frontest controller.
 ```objc
 #import "EBForeNotification.h"
+{...
 //show a system sound banner
 [EBForeNotification handleRemoteNotification:@{@"aps":@{@"alert":@"banner content"}} soundID:1312];
 
