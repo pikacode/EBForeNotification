@@ -14,9 +14,9 @@ Support iOS 7~10 beta, support both simulator & iPhone build.
 
 Actual effect：
 
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.gif)
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot03.gif)
 
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.gif)
+![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot04.gif)
 
 ## Install
 ### pod
