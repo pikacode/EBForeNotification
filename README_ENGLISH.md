@@ -25,10 +25,13 @@ Support iOS 7~10 beta, support both simulator & iPhone build.
 - swipe down gesture
 
 Actual effect：
+- iOS 10 before style
 
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.gif)
+	![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.gif)
 
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.gif)
+- iOS 10 style
+
+	![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.gif)
 
 ## Install
 ### pod
