@@ -10,8 +10,7 @@ Support iOS 7~10 beta, support both simulator & iPhone build.
 
 	```objc
 	[EBForeNotification handleRemoteNotification:userInfo soundID:soundID isIos10:YES];
-}
-
+	//or
 	[EBForeNotification handleRemoteNotification:userInfo customSound:soundName isIos10:YES];
 	```
 	
