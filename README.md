@@ -31,6 +31,9 @@ QQ: 57380422
 
 实际效果如下：
 
+(`时间` 可以在 `EBForeNotification.h` 中自定义 `static NSString *const EBBannerViewTimeText = @"现在";`)
+
+
 - iOS 10 以前样式
 
 	![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.gif)
