@@ -19,39 +19,53 @@ NSString *const EBBannerViewDidClick = @"EBBannerViewDidClick";
 
 #pragma mark - public
 
-+(void)handleRemoteNotification:(NSDictionary*)userInfo soundID:(int)soundID{
++(void)handleRemoteNotification:(NSDictionary*)userInfo soundID:(int)soundID isIos10:(BOOL)isIos10{
     if (userInfo) {
         [EBBannerView class];
         id aps = [userInfo valueForKey:@"aps"];
         if (aps && [aps isKindOfClass:[NSDictionary class]] && [aps valueForKey:@"alert"] && ![[aps valueForKey:@"alert"] isEqual: @""]) {
-            [EBForeNotification showBannerWithUserInfo:userInfo soundID:soundID];
+            [EBForeNotification showBannerWithUserInfo:userInfo soundID:soundID isIos10:isIos10];
         }
     }
 }
 
++(void)handleRemoteNotification:(NSDictionary*)userInfo soundID:(int)soundID{
+    [EBForeNotification handleRemoteNotification:userInfo soundID:soundID isIos10:NO];
+}
+
 +(void)handleRemoteNotification:(NSDictionary*)userInfo customSound:(NSString*)soundName{
+    [EBForeNotification handleRemoteNotification:userInfo customSound:soundName isIos10:NO];
+}
+
++(void)handleRemoteNotification:(NSDictionary*)userInfo customSound:(NSString*)soundName isIos10:(BOOL)isIos10{
     if (soundName) {
         NSURL *url = [[NSBundle mainBundle] URLForResource:soundName withExtension:nil];
         SystemSoundID soundID = 0;
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)(url), &soundID);
-        [EBForeNotification handleRemoteNotification:userInfo soundID:soundID];
+        [EBForeNotification handleRemoteNotification:userInfo soundID:soundID isIos10:isIos10];
     }
 }
 
 #pragma mark - private
 
-+(void)showBannerWithUserInfo:(NSDictionary*)userInfo soundID:(int)soundID{
++(void)showBannerWithUserInfo:(NSDictionary*)userInfo soundID:(int)soundID isIos10:(BOOL)isIos10{
     if (soundID) {
         AudioServicesPlaySystemSound(soundID);
     }
     if (SharedBannerView) {
         SharedBannerView = nil;
     }
-    SharedBannerView = [[NSBundle mainBundle] loadNibNamed:@"EBBannerView" owner:nil options:nil].lastObject;
+    NSArray *banners = [[NSBundle mainBundle] loadNibNamed:@"EBBannerView" owner:nil options:nil];
+    if (isIos10) {
+        SharedBannerView = banners[1];
+    }else{
+        SharedBannerView = banners[0];
+    }
+    [SharedBannerView makeKeyAndVisible];
     UIViewController *controller = [EBForeNotification appRootViewController];
+    SharedBannerView.isIos10 = isIos10;
     SharedBannerView.userInfo = userInfo;
     [controller.view addSubview:SharedBannerView];
-    [NSTimer scheduledTimerWithTimeInterval:BannerStayTime target:self selector:@selector(deleteBanner) userInfo:nil repeats:NO];
 }
 
 +(UIViewController *)appRootViewController{
@@ -61,12 +75,6 @@ NSString *const EBBannerViewDidClick = @"EBBannerViewDidClick";
         topVC = topVC.presentedViewController;
     }
     return topVC;
-}
-
-+(void)deleteBanner{
-    if (SharedBannerView) {
-        [SharedBannerView removeWithAnimation];
-    }
 }
 
 @end

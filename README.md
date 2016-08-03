@@ -7,7 +7,19 @@ QQ: 57380422
 
 支持 iOS 7~10 beta，支持`模拟器`和`真机`运行。
 
+## 新增
+- 下滑手势
+- iOS 10 弹窗样式，调用方法 (iOS 10 样式暂不支持`下滑手势`和`多行内容`)
+
+	```objc
+	[EBForeNotification handleRemoteNotification:userInfo soundID:soundID isIos10:YES];
+}
+
+	[EBForeNotification handleRemoteNotification:userInfo customSound:soundName isIos10:YES];
+	```
+
 ## 效果
+
 - 跟系统推送弹窗 UI 效果完全相同
 - 可以自动获取 App 的`应用名称`，`应用图标`
 - 弹窗时会自动隐藏系统状态栏、收起后自动显示系统状态栏
@@ -15,13 +27,18 @@ QQ: 57380422
 - `时间`及下方`收拉条`的颜色跟当前页面的背景颜色相同
 - 自带`点击事件`，点击可获取推送内容，进行相应页面跳转
 - 自带`上滑手势`，快速收起
+- 自带`下滑手势`，展开消息完整内容
 - 自动在处于最前端的 controller 上进行弹窗
 
 实际效果如下：
 
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.gif)
+- iOS 10 以前样式
 
-![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.gif)
+	![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.gif)
+
+- iOS 10 样式
+
+	![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.gif)
 
 
 ## 安装
