@@ -24,6 +24,8 @@ Support iOS 7~10 beta, support both simulator & iPhone build.
 - swipe down gesture
 
 Actual effect：
+
+(The `time` can be defined in `EBForeNotification.h` `static NSString *const EBBannerViewTimeText = @"now";`)
 - iOS 10 before style
 
 	![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.gif)
