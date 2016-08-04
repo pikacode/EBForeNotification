@@ -135,7 +135,11 @@ iOS 系统自带的声音 id，系统级的推送服务默认使用的是`三全
 
 ```objc
 #import "EBForeNotification.h"
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eBBannerViewDidClick:) name:EBBannerViewDidClick object:nil];
+
+{...
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eBBannerViewDidClick:) name:EBBannerViewDidClick object:nil];
+...}
+
 -(void)eBBannerViewDidClick:(NSNotification*)noti{
     if(noti[@"key1" == @"跳转页面1"]){
         //跳转到页面1
