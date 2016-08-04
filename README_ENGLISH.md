@@ -124,7 +124,11 @@ Add observer:
 
 ```objc
 #import "EBForeNotification.h"
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eBBannerViewDidClick:) name:EBBannerViewDidClick object:nil];
+
+{...
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eBBannerViewDidClick:) name:EBBannerViewDidClick object:nil];
+...}
+
 -(void)eBBannerViewDidClick:(NSNotification*)noti{
     if(noti[@"key1" == @"jump1"]){
         //jump to page 1
