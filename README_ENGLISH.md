@@ -1,4 +1,4 @@
-Email：57380422@qq.com
+Email：pikacode@qq.com
 # EBForeNotification
 Show the `Banners` and `Sounds` as the same as the system notifications on foreground. Get notification content and Handle click event.
 
