@@ -6,7 +6,7 @@ Support iOS 7~10 beta, support both simulator & iPhone build.
 
 ## New Feature
 - swipe down gesture
-- iOS 10 banner style，example（iOS 10 style not support `swipe down gesture` and `multi-line` yet）：
+- iOS 10 banner style，example（iOS 10 style does not support `swipe down gesture` and `multi-line` yet）：
 
 	```objc
 	[EBForeNotification handleRemoteNotification:userInfo soundID:soundID isIos10:YES];
