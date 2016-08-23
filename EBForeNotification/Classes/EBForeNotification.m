@@ -54,7 +54,7 @@ NSString *const EBBannerViewDidClick = @"EBBannerViewDidClick";
     if (SharedBannerView) {
         SharedBannerView = nil;
     }
-    NSArray *banners = [[NSBundle mainBundle] loadNibNamed:@"EBBannerView" owner:nil options:nil];
+    NSArray *banners = [[NSBundle bundleForClass:[self class]] loadNibNamed:@"EBBannerView" owner:nil options:nil];
     if (isIos10) {
         SharedBannerView = banners[1];
     }else{
