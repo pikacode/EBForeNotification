@@ -35,7 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0D0AC7491D6C1A31001FE4A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EBBannerView.xib; sourceTree = "<group>"; };
 		0D0AC74B1D6C1A34001FE4A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EBBannerView.xib; sourceTree = "<group>"; };
 		0D10E0BA1D51C4D700DE58D2 /* UILabel+ContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ContentSize.h"; sourceTree = "<group>"; };
 		0D10E0BB1D51C4D700DE58D2 /* UILabel+ContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ContentSize.m"; sourceTree = "<group>"; };
@@ -284,7 +283,6 @@
 		0D0AC74A1D6C1A31001FE4A3 /* EBBannerView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0D0AC7491D6C1A31001FE4A3 /* en */,
 				0D0AC74B1D6C1A34001FE4A3 /* Base */,
 			);
 			name = EBBannerView.xib;
