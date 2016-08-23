@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0901F52012465E429D4C4EF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F65F450C6E72513995C5B87 /* CoreGraphics.framework */; };
+		0D0AC7481D6C1A31001FE4A3 /* EBBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D0AC74A1D6C1A31001FE4A3 /* EBBannerView.xib */; };
 		0D10E0BC1D51C4D700DE58D2 /* UILabel+ContentSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D10E0BA1D51C4D700DE58D2 /* UILabel+ContentSize.h */; };
 		0D10E0BD1D51C4D700DE58D2 /* UILabel+ContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D10E0BB1D51C4D700DE58D2 /* UILabel+ContentSize.m */; };
 		0D7107FA1D4B909D00EACCCE /* EBBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7107F31D4B909D00EACCCE /* EBBannerView.h */; };
 		0D7107FB1D4B909D00EACCCE /* EBBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7107F41D4B909D00EACCCE /* EBBannerView.m */; };
-		0D7107FC1D4B909D00EACCCE /* EBBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7107F51D4B909D00EACCCE /* EBBannerView.xib */; };
 		0D7107FD1D4B909D00EACCCE /* EBForeNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7107F61D4B909D00EACCCE /* EBForeNotification.m */; };
 		0D7107FE1D4B909D00EACCCE /* UIImage+ColorAtPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7107F71D4B909D00EACCCE /* UIImage+ColorAtPoint.h */; };
 		0D7107FF1D4B909D00EACCCE /* UIImage+ColorAtPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7107F81D4B909D00EACCCE /* UIImage+ColorAtPoint.m */; };
@@ -35,11 +35,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D0AC7491D6C1A31001FE4A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EBBannerView.xib; sourceTree = "<group>"; };
+		0D0AC74B1D6C1A34001FE4A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EBBannerView.xib; sourceTree = "<group>"; };
 		0D10E0BA1D51C4D700DE58D2 /* UILabel+ContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ContentSize.h"; sourceTree = "<group>"; };
 		0D10E0BB1D51C4D700DE58D2 /* UILabel+ContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ContentSize.m"; sourceTree = "<group>"; };
 		0D7107F31D4B909D00EACCCE /* EBBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBannerView.h; sourceTree = "<group>"; };
 		0D7107F41D4B909D00EACCCE /* EBBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBBannerView.m; sourceTree = "<group>"; };
-		0D7107F51D4B909D00EACCCE /* EBBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBBannerView.xib; sourceTree = "<group>"; };
 		0D7107F61D4B909D00EACCCE /* EBForeNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBForeNotification.m; sourceTree = "<group>"; };
 		0D7107F71D4B909D00EACCCE /* UIImage+ColorAtPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorAtPoint.h"; sourceTree = "<group>"; };
 		0D7107F81D4B909D00EACCCE /* UIImage+ColorAtPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorAtPoint.m"; sourceTree = "<group>"; };
@@ -101,7 +102,7 @@
 			children = (
 				0D7107F31D4B909D00EACCCE /* EBBannerView.h */,
 				0D7107F41D4B909D00EACCCE /* EBBannerView.m */,
-				0D7107F51D4B909D00EACCCE /* EBBannerView.xib */,
+				0D0AC74A1D6C1A31001FE4A3 /* EBBannerView.xib */,
 				0D7107F61D4B909D00EACCCE /* EBForeNotification.m */,
 				0D7107F71D4B909D00EACCCE /* UIImage+ColorAtPoint.h */,
 				0D7107F81D4B909D00EACCCE /* UIImage+ColorAtPoint.m */,
@@ -254,7 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D86984F1D40989000AEE574 /* LaunchScreen.storyboard in Resources */,
-				0D7107FC1D4B909D00EACCCE /* EBBannerView.xib in Resources */,
+				0D0AC7481D6C1A31001FE4A3 /* EBBannerView.xib in Resources */,
 				0D86984C1D40989000AEE574 /* Assets.xcassets in Resources */,
 				0D86984A1D40989000AEE574 /* Main.storyboard in Resources */,
 			);
@@ -280,6 +281,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		0D0AC74A1D6C1A31001FE4A3 /* EBBannerView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D0AC7491D6C1A31001FE4A3 /* en */,
+				0D0AC74B1D6C1A34001FE4A3 /* Base */,
+			);
+			name = EBBannerView.xib;
+			sourceTree = "<group>";
+		};
 		0D8698481D40989000AEE574 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

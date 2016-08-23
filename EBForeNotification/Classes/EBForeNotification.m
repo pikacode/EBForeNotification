@@ -21,7 +21,6 @@ NSString *const EBBannerViewDidClick = @"EBBannerViewDidClick";
 
 +(void)handleRemoteNotification:(NSDictionary*)userInfo soundID:(int)soundID isIos10:(BOOL)isIos10{
     if (userInfo) {
-        [EBBannerView class];
         id aps = [userInfo valueForKey:@"aps"];
         if (aps && [aps isKindOfClass:[NSDictionary class]] && [aps valueForKey:@"alert"] && ![[aps valueForKey:@"alert"] isEqual: @""]) {
             [EBForeNotification showBannerWithUserInfo:userInfo soundID:soundID isIos10:isIos10];
