@@ -27,6 +27,7 @@
 #define BannerHeight 70
 #define BannerHeightiOS10 90
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define WEAK_SELF(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 UIWindow *originWindow;
 
@@ -123,10 +124,11 @@ CGFloat originHeight;
                 originHeight = self.content_label.frame.size.height;
             }
             CGFloat caculatedHeight = [self.content_label caculatedSize].height;
+            WEAK_SELF(weakSelf);
             [UIView animateWithDuration:BannerSwipeDownTime animations:^{
-                self.frame = CGRectMake(0, 0, ScreenWidth, BannerHeight + caculatedHeight - originHeight);
+                weakSelf.frame = CGRectMake(0, 0, ScreenWidth, BannerHeight + caculatedHeight - originHeight);
             } completion:^(BOOL finished) {
-                self.frame = CGRectMake(0, 0, ScreenWidth, BannerHeight + caculatedHeight - originHeight);
+                weakSelf.frame = CGRectMake(0, 0, ScreenWidth, BannerHeight + caculatedHeight - originHeight);
             }];
         }
     }
@@ -135,26 +137,35 @@ CGFloat originHeight;
 -(void)apperWithAnimation{
     CGFloat bannerHeight = self.isIos10 ? BannerHeightiOS10 : BannerHeight;
     self.frame = CGRectMake(0, 0, ScreenWidth, 0);
+    WEAK_SELF(weakSelf);
     [UIView animateWithDuration:BannerSwipeUpTime animations:^{
-        self.frame = CGRectMake(0, 0, ScreenWidth, bannerHeight);
+        weakSelf.frame = CGRectMake(0, 0, ScreenWidth, bannerHeight);
     } completion:^(BOOL finished) {
-        self.frame = CGRectMake(0, 0, ScreenWidth, bannerHeight);
+        weakSelf.frame = CGRectMake(0, 0, ScreenWidth, bannerHeight);
     }];
     [NSTimer scheduledTimerWithTimeInterval:BannerStayTime target:self selector:@selector(removeWithAnimation) userInfo:nil repeats:NO];
 }
 
 -(void)removeWithAnimation{
+    WEAK_SELF(weakSelf);
     [UIView animateWithDuration:BannerSwipeUpTime animations:^{
-        for (UIView *view in self.subviews) {
+        for (UIView *view in weakSelf.subviews) {
             CGRect frame = view.frame;
             [view removeConstraints:view.constraints];
             view.frame = frame;
         }
-        [self removeConstraints:self.constraints];
-        self.frame = CGRectMake(0, 0, ScreenWidth, 0);
+        [weakSelf removeConstraints:self.constraints];
+        weakSelf.frame = CGRectMake(0, 0, ScreenWidth, 0);
     } completion:^(BOOL finished) {
-        self.frame = CGRectMake(0, 0, ScreenWidth, 0);
-        [self removeFromSuperview];
+        weakSelf.frame = CGRectMake(0, 0, ScreenWidth, 0);
+        [weakSelf removeFromSuperview];
+        for (UIWindow *window in [[UIApplication sharedApplication] windows]) {
+            if ([window isKindOfClass:[EBBannerView class]]) {
+                window.hidden = YES;
+                [window resignKeyWindow];
+                [window removeFromSuperview];
+            }
+        }
         SharedBannerView = nil;
     }];
 }
