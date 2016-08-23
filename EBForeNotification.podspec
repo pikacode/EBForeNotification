@@ -93,11 +93,11 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.source_files  = "EBForeNotification/Classes/*.{h,m}""
+  s.source_files  = "EBForeNotification/","EBForeNotification/Classes/*.{h,m}"
 
   #s.exclude_files = "Classes/Exclude"
 
-  s.public_header_files = "EBForeNotification/Classes/EBForeNotification.h"
+  s.public_header_files = "EBForeNotification/EBForeNotification.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
