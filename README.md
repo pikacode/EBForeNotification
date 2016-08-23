@@ -33,7 +33,8 @@ Support iOS 7~10 beta, support both simulator & iPhone build.
 
   ![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.gif)
 
-## Install
+## Installation
+
 ### pod
 	platform :ios, '7.0'
 
@@ -64,9 +65,7 @@ Call any 1 method below can show a banner on the frontest controller.
 ```
 
 ## Handle Remote/Local Notification
-When received, will show a banner & sound on foreground automatic.
-
-Call method in `AppDelegate.m`
+Call the method in `AppDelegate.m` - `didReceiveRemoteNotification` , when received a notification, it will show a banner & sound on foreground automatically.
 
 ```objc
 //AppDelegate.m
@@ -97,14 +96,13 @@ Call method in `AppDelegate.m`
 ```
 
 ## Parma: soundID
-Is iOS system sound id, default push notification sound "Tritone" is 1312
+- Is iOS system sound id, default push notification sound "Tritone" is 1312
+- More sound id to see here [iOS Predefined sounds](http://iphonedevwiki.net/index.php/AudioServices#) or here [AudioServices sounds](http://www.cocoachina.com/bbs/read.php?tid=134344)
 
-More sound id to see here [iOS Predefined sounds](http://iphonedevwiki.net/index.php/AudioServices#)
-or here [AudioServices sounds](http://www.cocoachina.com/bbs/read.php?tid=134344)
 
-You can download all the system sounds [UISounds.zip](/UISounds.zip) , listen and choose one which you perfer, then check out it's `id` with the form above
+- You can download all the system sounds [UISounds.zip](/UISounds.zip) , listen and choose one which you perfer, then check out it's `id` with the form above
 
-## Listen Click
+## Handle Click
 Add observer for `EBBannerViewDidClick`, get extra key/value to handle your custom events, such as: `jump to some page when user clicked`.
 
 Received notification:
