@@ -24,7 +24,8 @@ Support iOS 7~10 beta, support both simulator & iPhone build.
 - click gesture & handle it with notification info
 - swipe up gesture
 - swipe down gesture
-  Actual effect：
+
+Actual effect：
 - iOS 10 before style
 
   ![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot01.gif)
