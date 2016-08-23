@@ -2,23 +2,10 @@
 
 Email：pikacode@qq.com
 
-<<<<<<< HEAD
-## 新增
-- 下滑手势
-- iOS 10 弹窗样式，调用方法 (iOS 10 样式暂不支持`下滑手势`和`多行内容`)
-
-	```objc
-	[EBForeNotification handleRemoteNotification:userInfo soundID:soundID isIos10:YES];
-	//或
-	[EBForeNotification handleRemoteNotification:userInfo customSound:soundName isIos10:YES];
-	```
-=======
 # EBForeNotification
 Show the `Banners` and `Sounds` as the same as the system notifications on foreground. Get notification content and Handle click event.
 
 Support iOS 7~10 beta, support both simulator & iPhone build.
->>>>>>> dev
-
 ## New Feature
 - swipe down gesture
 - iOS 10 banner style，example（iOS 10 style not support `swipe down gesture` and `multi-line` yet）：
@@ -30,12 +17,6 @@ Support iOS 7~10 beta, support both simulator & iPhone build.
   [EBForeNotification handleRemoteNotification:userInfo customSound:soundName isIos10:YES];
   ```
 
-<<<<<<< HEAD
-(`时间` 可以在 `EBForeNotification.h` 中自定义 `static NSString *const EBBannerViewTimeText = @"现在";`)
-
-
-- iOS 10 以前样式
-=======
 ## Display
 - The same UI with the system banner & sound
 - Auto get App name & App icon
@@ -44,8 +25,6 @@ Support iOS 7~10 beta, support both simulator & iPhone build.
 - click gesture & handle it with notification info
 - swipe up gesture
 - swipe down gesture
->>>>>>> dev
-
 Actual effect：
 - iOS 10 before style
 
