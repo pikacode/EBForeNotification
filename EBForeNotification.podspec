@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "EBForeNotification"
-  s.version      = "1.0.6"
+  s.version      = "1.0.7"
   s.summary      = "iOS 前台推送及事件处理。iOS Foreground Push Notification and event-handle."
 
   # This description is used to generate tags and improve search results.
@@ -109,7 +109,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-   s.resources = "EBForeNotification/Classes/*.xib"
+   s.resources = "EBForeNotification/Classes/*.{xib,mp3}"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 

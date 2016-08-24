@@ -1,10 +1,7 @@
-//
-//  EBForeNotification.h
-//  iOS-Foreground-Push-Notification
-//
-//  Created by wuxingchen on 16/7/21.
+
 //  Copyright © 2016年 57380422@qq.com. All rights reserved.
-//
+
+//  version 1.0.7
 
 #import <Foundation/Foundation.h>
 

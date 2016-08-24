@@ -11,22 +11,13 @@
 #import <UIKit/UIKit.h>
 #import "EBBannerView.h"
 #import "UIImage+ColorAtPoint.h"
-
+#import "EBMuteDetector.h"
 
 NSString *const EBBannerViewDidClick = @"EBBannerViewDidClick";
 
 @implementation EBForeNotification
 
 #pragma mark - public
-
-+(void)handleRemoteNotification:(NSDictionary*)userInfo soundID:(int)soundID isIos10:(BOOL)isIos10{
-    if (userInfo) {
-        id aps = [userInfo valueForKey:@"aps"];
-        if (aps && [aps isKindOfClass:[NSDictionary class]] && [aps valueForKey:@"alert"] && ![[aps valueForKey:@"alert"] isEqual: @""]) {
-            [EBForeNotification showBannerWithUserInfo:userInfo soundID:soundID isIos10:isIos10];
-        }
-    }
-}
 
 +(void)handleRemoteNotification:(NSDictionary*)userInfo soundID:(int)soundID{
     [EBForeNotification handleRemoteNotification:userInfo soundID:soundID isIos10:NO];
@@ -45,11 +36,26 @@ NSString *const EBBannerViewDidClick = @"EBBannerViewDidClick";
     }
 }
 
++(void)handleRemoteNotification:(NSDictionary*)userInfo soundID:(int)soundID isIos10:(BOOL)isIos10{
+    if (userInfo) {
+        id aps = [userInfo valueForKey:@"aps"];
+        if (aps && [aps isKindOfClass:[NSDictionary class]] && [aps valueForKey:@"alert"] && ![[aps valueForKey:@"alert"] isEqual: @""]) {
+            [EBForeNotification showBannerWithUserInfo:userInfo soundID:soundID isIos10:isIos10];
+        }
+    }
+}
+
 #pragma mark - private
 
 +(void)showBannerWithUserInfo:(NSDictionary*)userInfo soundID:(int)soundID isIos10:(BOOL)isIos10{
     if (soundID) {
-        AudioServicesPlaySystemSound(soundID);
+        [[EBMuteDetector sharedDetecotr] detectComplete:^(BOOL isMute) {
+            if (isMute) {
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+            }else{
+                AudioServicesPlaySystemSound(soundID);
+            }
+        }];
     }
     if (SharedBannerView) {
         SharedBannerView = nil;
