@@ -70,7 +70,12 @@ NSString *const EBBannerViewDidClick = @"EBBannerViewDidClick";
     UIViewController *controller = [EBForeNotification appRootViewController];
     SharedBannerView.isIos10 = isIos10;
     SharedBannerView.userInfo = userInfo;
-    [controller.view addSubview:SharedBannerView];
+    // 避免AlertView 和 Banner 加载在同一个ViewController上。
+    if ([controller isKindOfClass:[UIAlertController class]]) {
+        [[UIApplication sharedApplication].keyWindow addSubview:SharedBannerView];
+    }else {
+        [controller.view addSubview:SharedBannerView];
+    }
 }
 
 +(UIViewController *)appRootViewController{
