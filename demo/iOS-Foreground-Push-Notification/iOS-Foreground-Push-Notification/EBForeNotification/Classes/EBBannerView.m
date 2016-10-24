@@ -74,7 +74,15 @@ UIWindow *originWindow;
         assert(0);
     }
     self.title_label.text   = appName;
-    self.content_label.text = self.userInfo[@"aps"][@"alert"];
+    id alert =self.userInfo[@"aps"][@"alert"];
+    if ([alert isKindOfClass:[NSString class]]) {
+        self.content_label.text = alert;
+        
+    }else if ([alert isKindOfClass:[NSDictionary class]]){
+        NSDictionary *alertDic =alert;
+        self.content_label.text = alertDic[@"body"];
+    }
+    
     self.time_label.text = EBBannerViewTimeText;
     [originWindow makeKeyAndVisible];
     if (!self.isIos10) {
