@@ -10,8 +10,6 @@ extern NSString *const EBBannerViewDidClick;    //监听点击弹窗的事件
 @interface EBForeNotification : NSObject
 +(void)handleRemoteNotification:(NSDictionary*)userInfo soundID:(int)soundID;
 +(void)handleRemoteNotification:(NSDictionary*)userInfo customSound:(NSString*)soundName;
-+(void)handleRemoteNotification:(NSDictionary*)userInfo soundID:(int)soundID isIos10:(BOOL)isIos10;
-+(void)handleRemoteNotification:(NSDictionary*)userInfo customSound:(NSString*)soundName isIos10:(BOOL)isIos10;
 @end
 
 static NSString *const EBBannerViewTimeText = @"现在";    //默认弹窗时间 default banner time

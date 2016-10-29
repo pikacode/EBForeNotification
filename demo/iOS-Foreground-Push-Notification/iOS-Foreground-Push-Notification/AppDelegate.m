@@ -16,12 +16,12 @@
 @implementation AppDelegate
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo { 
-    [EBForeNotification handleRemoteNotification:userInfo soundID:1312 isIos10:NO];
+    [EBForeNotification handleRemoteNotification:userInfo soundID:1312];
 }
 
 //ios7 only
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {    
-    [EBForeNotification handleRemoteNotification:userInfo soundID:1312 isIos10:NO];
+    [EBForeNotification handleRemoteNotification:userInfo soundID:1312];
     completionHandler(UIBackgroundFetchResultNewData);
 }
 

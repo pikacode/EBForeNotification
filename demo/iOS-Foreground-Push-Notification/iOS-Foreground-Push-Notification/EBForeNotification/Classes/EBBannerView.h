@@ -15,7 +15,6 @@
 
 @interface EBBannerView : UIWindow
 @property (nonatomic, retain)NSDictionary *userInfo;
-@property (nonatomic, assign)BOOL isIos10;
 -(void)removeWithAnimation;
 @end
 

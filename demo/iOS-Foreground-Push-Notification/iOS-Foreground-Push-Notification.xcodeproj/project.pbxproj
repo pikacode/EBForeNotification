@@ -41,6 +41,7 @@
 		0D0EF7651D6C980F006CCCFF /* EBMute.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = EBMute.mp3; sourceTree = "<group>"; };
 		0D10E0BA1D51C4D700DE58D2 /* UILabel+ContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ContentSize.h"; sourceTree = "<group>"; };
 		0D10E0BB1D51C4D700DE58D2 /* UILabel+ContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ContentSize.m"; sourceTree = "<group>"; };
+		0D3CF7F21DC463F3008C4F4B /* iOS-Foreground-Push-Notification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS-Foreground-Push-Notification.entitlements"; sourceTree = "<group>"; };
 		0D7107F31D4B909D00EACCCE /* EBBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBannerView.h; sourceTree = "<group>"; };
 		0D7107F41D4B909D00EACCCE /* EBBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBBannerView.m; sourceTree = "<group>"; };
 		0D7107F61D4B909D00EACCCE /* EBForeNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBForeNotification.m; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 		0D86983E1D40989000AEE574 /* iOS-Foreground-Push-Notification */ = {
 			isa = PBXGroup;
 			children = (
+				0D3CF7F21DC463F3008C4F4B /* iOS-Foreground-Push-Notification.entitlements */,
 				0D7107F11D4B909D00EACCCE /* EBForeNotification */,
 				0D8698421D40989000AEE574 /* AppDelegate.h */,
 				0D8698431D40989000AEE574 /* AppDelegate.m */,
@@ -237,6 +239,14 @@
 						DevelopmentTeam = 8X2A38Q9VD;
 						DevelopmentTeamName = "星辰 吴 (Personal Team)";
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -400,6 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "iOS-Foreground-Push-Notification/iOS-Foreground-Push-Notification.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8X2A38Q9VD;
@@ -422,6 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "iOS-Foreground-Push-Notification/iOS-Foreground-Push-Notification.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8X2A38Q9VD;

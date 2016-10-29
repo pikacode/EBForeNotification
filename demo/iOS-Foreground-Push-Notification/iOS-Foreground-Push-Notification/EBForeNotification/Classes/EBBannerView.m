@@ -17,14 +17,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *content_label;
 @property (weak, nonatomic) IBOutlet UILabel *time_label;
 @property (weak, nonatomic) IBOutlet UIView *line_view;
-@property (weak, nonatomic) IBOutlet UIView *mask_view;
 @property (nonatomic, assign)BOOL isDownSwiped;
 @end
 
 @implementation EBBannerView
 
 #define BannerHeight 70
-#define BannerHeightiOS10 90
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define WEAK_SELF(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
@@ -36,22 +34,6 @@ UIWindow *originWindow;
     [self addGestureRecognizer];
     self.windowLevel = UIWindowLevelAlert;
     originWindow = [UIApplication sharedApplication].keyWindow;
-    if (self.tag == 2) {
-        //corner
-        self.mask_view.layer.masksToBounds = YES;
-        self.mask_view.layer.cornerRadius  = 10;
-        self.mask_view.clipsToBounds       = YES;
-        //shadow
-        self.backgroundColor = [UIColor clearColor];
-        self.layer.masksToBounds = YES;
-        self.layer.cornerRadius = 10;
-
-        self.mask_view.layer.shadowColor = [UIColor blackColor].CGColor;
-        self.mask_view.layer.shadowOffset = CGSizeMake(0,0);
-        self.mask_view.layer.shadowOpacity = 1;
-        self.mask_view.layer.shadowRadius = 5;
-        self.mask_view.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.mask_view.bounds cornerRadius:10].CGPath;
-    }
 }
 
 -(void)setUserInfo:(NSDictionary *)userInfo{
@@ -73,16 +55,39 @@ UIWindow *originWindow;
         assert(0);
     }
     self.title_label.text   = appName;
-    self.content_label.text = self.userInfo[@"aps"][@"alert"];
+    NSString *alert;
+    if ([self.userInfo[@"aps"][@"alert"] isKindOfClass:[NSString class]]) {
+        alert = self.userInfo[@"aps"][@"alert"];
+    }else{
+        @try {
+            alert = self.userInfo[@"aps"][@"alert"][@"body"];
+        } @catch (NSException *exception) {
+
+        } @finally {
+
+            if (!alert) {
+                @try {
+                    alert = self.userInfo[@"aps"][@"alert"][@"title"];
+                } @catch (NSException *exception) {
+
+                } @finally {
+
+                    if (!alert) {
+                        @try {
+                            alert = self.userInfo[@"aps"][@"alert"][@"subtitle"];
+                        } @catch (NSException *exception) {
+
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+    self.content_label.text = alert;
     self.time_label.text = EBBannerViewTimeText;
     [originWindow makeKeyAndVisible];
-    if (!self.isIos10) {
-        self.time_label.textColor      = [UIImage colorAtPoint:self.time_label.center];
-        self.time_label.alpha = 0.7;
-        CGPoint lineCenter = self.line_view.center;
-        self.line_view.backgroundColor = [UIImage colorAtPoint:CGPointMake(lineCenter.x, lineCenter.y - 7)];
-        self.line_view.alpha = 0.5;
-    }
     [self apperWithAnimation];
 }
 
@@ -115,32 +120,29 @@ UIWindow *originWindow;
 }
 
 -(void)swipeDownGesture:(UISwipeGestureRecognizer*)gesture{
-    if (!self.isIos10) {
-        if (gesture.direction == UISwipeGestureRecognizerDirectionDown) {
-            CGFloat originHeight = 0;
-            self.isDownSwiped = YES;
-            if (originHeight == 0) {
-                originHeight = self.content_label.frame.size.height;
-            }
-            CGFloat caculatedHeight = [self.content_label caculatedSize].height;
-            WEAK_SELF(weakSelf);
-            [UIView animateWithDuration:BannerSwipeDownTime animations:^{
-                weakSelf.frame = CGRectMake(0, 0, ScreenWidth, BannerHeight + caculatedHeight - originHeight);
-            } completion:^(BOOL finished) {
-                weakSelf.frame = CGRectMake(0, 0, ScreenWidth, BannerHeight + caculatedHeight - originHeight);
-            }];
+    if (gesture.direction == UISwipeGestureRecognizerDirectionDown) {
+        CGFloat originHeight = 0;
+        self.isDownSwiped = YES;
+        if (originHeight == 0) {
+            originHeight = self.content_label.frame.size.height;
         }
+        CGFloat caculatedHeight = [self.content_label caculatedSize].height;
+        WEAK_SELF(weakSelf);
+        [UIView animateWithDuration:BannerSwipeDownTime animations:^{
+            weakSelf.frame = CGRectMake(0, 0, ScreenWidth, BannerHeight + caculatedHeight - originHeight);
+        } completion:^(BOOL finished) {
+            weakSelf.frame = CGRectMake(0, 0, ScreenWidth, BannerHeight + caculatedHeight - originHeight);
+        }];
     }
 }
 
 -(void)apperWithAnimation{
-    CGFloat bannerHeight = self.isIos10 ? BannerHeightiOS10 : BannerHeight;
     self.frame = CGRectMake(0, 0, ScreenWidth, 0);
     WEAK_SELF(weakSelf);
     [UIView animateWithDuration:BannerSwipeUpTime animations:^{
-        weakSelf.frame = CGRectMake(0, 0, ScreenWidth, bannerHeight);
+        weakSelf.frame = CGRectMake(0, 0, ScreenWidth, BannerHeight);
     } completion:^(BOOL finished) {
-        weakSelf.frame = CGRectMake(0, 0, ScreenWidth, bannerHeight);
+        weakSelf.frame = CGRectMake(0, 0, ScreenWidth, BannerHeight);
     }];
     [NSTimer scheduledTimerWithTimeInterval:BannerStayTime target:self selector:@selector(removeWithAnimation) userInfo:nil repeats:NO];
 }
