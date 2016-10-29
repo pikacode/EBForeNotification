@@ -13,8 +13,7 @@ QQ: 57380422
 
   ```objc
   [EBForeNotification handleRemoteNotification:userInfo soundID:soundID isIos10:YES];
-  }
-
+  //or
   [EBForeNotification handleRemoteNotification:userInfo customSound:soundName isIos10:YES];
   ```
 
@@ -74,9 +73,9 @@ QQ: 57380422
 
 
 ## 接收远程/本地推送后弹窗
-接收远程/本地推送后，自动在前台展示推送弹窗及声音。
+在 `AppDelegate.m` 的 `didReceiveRemoteNotification` 方法中添加代码
 
-在 `AppDelegate.m` 中添加代码
+接收远程/本地推送后，会自动在前台展示推送弹窗及声音。
 
 ```objc
 //AppDelegate.m
@@ -107,12 +106,11 @@ QQ: 57380422
 ```
 
 ## soundID 参数
-iOS 系统自带的声音 id，系统级的推送服务默认使用的是`三全音`，id = 1312
+- iOS 系统自带的声音 id，系统级的推送服务默认使用的是`三全音`，id = 1312
+- 其他系统声音 id 可以在这里查询到 [iOS Predefined sounds](http://iphonedevwiki.net/index.php/AudioServices#) 备用地址 [AudioServices sounds](http://www.cocoachina.com/bbs/read.php?tid=134344)
 
-其他系统声音 id 可以在这里查询到 [iOS Predefined sounds](http://iphonedevwiki.net/index.php/AudioServices#)
-备用地址 [AudioServices sounds](http://www.cocoachina.com/bbs/read.php?tid=134344)
 
-可以在这里 [UISounds.zip](/UISounds.zip) 下载并试听全部系统声音，然后选择自己想用的声音，根据名称对照上面提供的表格查找到相应的 `id`
+- 可以在这里 [UISounds.zip](/UISounds.zip) 下载并试听全部系统声音，然后选择自己想用的声音，根据名称对照上面提供的表格查找到相应的 `id`
 
 ## 监听并处理点击事件
 添加 `Observer` 监听 `EBBannerViewDidClick`，获取推送内容，通过推送时自定义的字段处理自己逻辑，如：跳转到对应页面等。

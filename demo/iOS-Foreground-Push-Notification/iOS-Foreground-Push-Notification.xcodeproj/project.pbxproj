@@ -234,7 +234,7 @@
 				TargetAttributes = {
 					0D86983B1D40989000AEE574 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = KE965R2D4S;
+						DevelopmentTeam = 8X2A38Q9VD;
 						DevelopmentTeamName = "星辰 吴 (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
@@ -402,6 +402,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8X2A38Q9VD;
 				INFOPLIST_FILE = "iOS-Foreground-Push-Notification/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -410,7 +411,7 @@
 					"$(PROJECT_DIR)/iOS-Foreground-Push-Notification",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = eb.jpush.demodd;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.jiguang.pikacode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -423,6 +424,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8X2A38Q9VD;
 				INFOPLIST_FILE = "iOS-Foreground-Push-Notification/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -431,7 +433,7 @@
 					"$(PROJECT_DIR)/iOS-Foreground-Push-Notification",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = eb.jpush.demodd;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.jiguang.pikacode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

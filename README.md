@@ -6,15 +6,13 @@ Email：pikacode@qq.com
 Show the `Banners` and `Sounds` as the same as the system notifications on foreground. Get notification content and Handle click event.
 
 Support iOS 7~10 beta, support both simulator & iPhone build.
-
 ## New Feature
 - swipe down gesture
 - iOS 10 banner style，example（iOS 10 style not support `swipe down gesture` and `multi-line` yet）：
 
   ```objc
   [EBForeNotification handleRemoteNotification:userInfo soundID:soundID isIos10:YES];
-  }
-
+  //or
   [EBForeNotification handleRemoteNotification:userInfo customSound:soundName isIos10:YES];
   ```
 
@@ -36,7 +34,8 @@ Actual effect：
 
   ![](https://github.com/Yasashi/EBForeNotification/raw/master/screenshot/screenshot02.gif)
 
-## Install
+## Installation
+
 ### pod
 	platform :ios, '7.0'
 
@@ -67,9 +66,7 @@ Call any 1 method below can show a banner on the frontest controller.
 ```
 
 ## Handle Remote/Local Notification
-When received, will show a banner & sound on foreground automatic.
-
-Call method in `AppDelegate.m`
+Call the method in `AppDelegate.m` - `didReceiveRemoteNotification` , when received a notification, it will show a banner & sound on foreground automatically.
 
 ```objc
 //AppDelegate.m
@@ -100,14 +97,13 @@ Call method in `AppDelegate.m`
 ```
 
 ## Parma: soundID
-Is iOS system sound id, default push notification sound "Tritone" is 1312
+- Is iOS system sound id, default push notification sound "Tritone" is 1312
+- More sound id to see here [iOS Predefined sounds](http://iphonedevwiki.net/index.php/AudioServices#) or here [AudioServices sounds](http://www.cocoachina.com/bbs/read.php?tid=134344)
 
-More sound id to see here [iOS Predefined sounds](http://iphonedevwiki.net/index.php/AudioServices#)
-or here [AudioServices sounds](http://www.cocoachina.com/bbs/read.php?tid=134344)
 
-You can download all the system sounds [UISounds.zip](/UISounds.zip) , listen and choose one which you perfer, then check out it's `id` with the form above
+- You can download all the system sounds [UISounds.zip](/UISounds.zip) , listen and choose one which you perfer, then check out it's `id` with the form above
 
-## Listen Click
+## Handle Click
 Add observer for `EBBannerViewDidClick`, get extra key/value to handle your custom events, such as: `jump to some page when user clicked`.
 
 Received notification:
@@ -128,7 +124,11 @@ Add observer:
 
 ```objc
 #import "EBForeNotification.h"
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eBBannerViewDidClick:) name:EBBannerViewDidClick object:nil];
+
+{...
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eBBannerViewDidClick:) name:EBBannerViewDidClick object:nil];
+...}
+
 -(void)eBBannerViewDidClick:(NSNotification*)noti{
     if(noti[@"key1" == @"jump1"]){
         //jump to page 1
