@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIView *line_view;
 @property (weak, nonatomic) IBOutlet UIView *mask_view;
 @property (nonatomic, assign)BOOL isDownSwiped;
-@property (nonatomic, assign)CGFloat calculatedHeight;
 @end
 
 @implementation EBBannerView
@@ -65,9 +64,9 @@ UIWindow *originWindow;
     [self.icon_image setImage:appIcon];
     NSDictionary *infoDictionary = [[NSBundle bundleForClass:[self class]] infoDictionary];
     // app名称
-    NSString *appName = [infoDictionary objectForKey:@"CFBundleName"];
+    NSString *appName = [infoDictionary objectForKey:@"CFBundleDisplayName"];
     if (!appName) {
-        appName = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+        appName = [infoDictionary objectForKey:@"CFBundleName"];
     }
     //appName = @"input a app name here"; //if appName = nil, unsign this line and change it to you'r own app name.
     if (!appName) {
@@ -115,10 +114,10 @@ UIWindow *originWindow;
     }
 }
 
-CGFloat originHeight;
 -(void)swipeDownGesture:(UISwipeGestureRecognizer*)gesture{
     if (!self.isIos10) {
         if (gesture.direction == UISwipeGestureRecognizerDirectionDown) {
+            CGFloat originHeight = 0;
             self.isDownSwiped = YES;
             if (originHeight == 0) {
                 originHeight = self.content_label.frame.size.height;
