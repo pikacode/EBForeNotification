@@ -14,6 +14,7 @@
 #import "EBMuteDetector.h"
 
 NSString *const EBBannerViewDidClick = @"EBBannerViewDidClick";
+NSString *EBBannerViewTimeText = @"现在";    //默认弹窗时间 default banner time
 
 @implementation EBForeNotification
 
@@ -43,6 +44,10 @@ NSString *const EBBannerViewDidClick = @"EBBannerViewDidClick";
             [EBForeNotification showBannerWithUserInfo:userInfo soundID:soundID isIos10:isIos10];
         }
     }
+}
+
++(void)setBannerViewTimeText:(NSString*)timeText {
+    EBBannerViewTimeText = timeText;
 }
 
 #pragma mark - private
