@@ -63,7 +63,7 @@ UIWindow *originWindow;
         appIcon = [UIImage imageNamed:@"AppIcon80x80"];
     }
     [self.icon_image setImage:appIcon];
-    NSDictionary *infoDictionary = [[NSBundle bundleForClass:[self class]] infoDictionary];
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     // app名称
     NSString *appName = [infoDictionary objectForKey:@"CFBundleName"];
     if (!appName) {
