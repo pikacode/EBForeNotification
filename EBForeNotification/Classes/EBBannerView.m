@@ -55,6 +55,24 @@ UIWindow *originWindow;
     }
 }
 
+-(NSString*) extractContentLabel:(NSDictionary*)userInfo{
+    NSObject *alertValue = userInfo[@"aps"][@"alert"];
+
+    if ([alertValue isKindOfClass:[NSString class]])
+        return alertValue;
+
+
+    if ([alertValue isKindOfClass:[NSDictionary class]]){
+        NSString *locKey = ((NSDictionary*)alertValue)[@"loc-key"];
+        if (locKey != nil)
+            return NSLocalizedString(locKey,nil);
+    }
+
+    @throw [NSException exceptionWithName:NSInvalidArgumentException
+                                   reason:@"aps['alert'] field malformed: it is neither a string nor a dictionary with key 'loc-key'"
+                                 userInfo:nil];
+}
+
 -(void)setUserInfo:(NSDictionary *)userInfo{
     _userInfo = userInfo;
     UIImage *appIcon;
@@ -74,7 +92,7 @@ UIWindow *originWindow;
         assert(0);
     }
     self.title_label.text   = appName;
-    self.content_label.text = self.userInfo[@"aps"][@"alert"];
+    self.content_label.text = [self extractContentLabel:userInfo];
     self.time_label.text = EBBannerViewTimeText;
     [originWindow makeKeyAndVisible];
     if (!self.isIos10) {
