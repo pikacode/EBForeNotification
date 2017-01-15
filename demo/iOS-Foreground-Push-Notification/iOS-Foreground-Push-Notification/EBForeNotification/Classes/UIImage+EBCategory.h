@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (ColorAtPoint)
+@interface UIImage (EBCategory)
 +(UIColor *)colorAtPoint:(CGPoint)point;
 @end

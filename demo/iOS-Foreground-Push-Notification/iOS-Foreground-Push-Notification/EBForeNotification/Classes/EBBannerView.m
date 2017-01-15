@@ -8,8 +8,9 @@
 
 #import "EBBannerView.h"
 #import "EBForeNotification.h"
-#import "UIImage+ColorAtPoint.h"
-#import "UILabel+ContentSize.h"
+#import "UIImage+EBCategory.h"
+#import "UILabel+EBCategory.h"
+#import <UserNotifications/UserNotifications.h>
 
 @interface EBBannerView()
 @property (weak, nonatomic) IBOutlet UIImageView *icon_image;
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *time_label;
 @property (weak, nonatomic) IBOutlet UIView *line_view;
 @property (nonatomic, assign)BOOL isDownSwiped;
+@property(nonatomic, assign)BOOL isRemoved;
 @end
 
 @implementation EBBannerView
@@ -25,6 +27,9 @@
 #define BannerHeight 70
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define WEAK_SELF(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+#define IsiOS10 [[UIDevice currentDevice].systemVersion floatValue] >= 10.0
+
 
 UIWindow *originWindow;
 
@@ -38,14 +43,30 @@ UIWindow *originWindow;
 
 -(void)setUserInfo:(NSDictionary *)userInfo{
     _userInfo = userInfo;
-    UIImage *appIcon;
-    appIcon = [UIImage imageNamed:@"AppIcon60x60"];
+
+    [self makeKeyAndVisible];
+    UIViewController *controller = [EBBannerView appRootViewController];
+    [controller.view addSubview:self];
+
+    if (IsiOS10) {
+
+
+
+    } else {
+
+
+    }
+    
+    //icon
+    UIImage *appIcon = [UIImage imageNamed:@"AppIcon60x60"];
     if (!appIcon) {
         appIcon = [UIImage imageNamed:@"AppIcon80x80"];
     }
     [self.icon_image setImage:appIcon];
-    NSDictionary *infoDictionary = [[NSBundle bundleForClass:[self class]] infoDictionary];
-    // app名称
+
+    //app name
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+
     NSString *appName = [infoDictionary objectForKey:@"CFBundleDisplayName"];
     if (!appName) {
         appName = [infoDictionary objectForKey:@"CFBundleName"];
@@ -54,7 +75,9 @@ UIWindow *originWindow;
     if (!appName) {
         assert(0);
     }
-    self.title_label.text   = appName;
+    self.title_label.text = appName;
+
+    //content
     NSString *alert;
     if ([self.userInfo[@"aps"][@"alert"] isKindOfClass:[NSString class]]) {
         alert = self.userInfo[@"aps"][@"alert"];
@@ -86,9 +109,9 @@ UIWindow *originWindow;
         }
     }
     self.content_label.text = alert;
-    self.time_label.text = EBBannerViewTimeText;
+    self.time_label.text    = EBBannerViewTimeText;
     [originWindow makeKeyAndVisible];
-    [self apperWithAnimation];
+    [self appearWithAnimation];
 }
 
 -(void)statusBarOrientationChange:(NSNotification *)notification{
@@ -136,7 +159,13 @@ UIWindow *originWindow;
     }
 }
 
--(void)apperWithAnimation{
+-(void)appearWithAnimation{
+    CGFloat originHeight = self.content_label.frame.size.height;
+    CGFloat caculatedHeight = [self.content_label caculatedSize].height;
+    if (caculatedHeight <= originHeight) {
+        self.line_view.hidden = YES;
+    }
+    
     self.frame = CGRectMake(0, 0, ScreenWidth, 0);
     WEAK_SELF(weakSelf);
     [UIView animateWithDuration:BannerSwipeUpTime animations:^{
@@ -148,27 +177,18 @@ UIWindow *originWindow;
 }
 
 -(void)removeWithAnimation{
-    WEAK_SELF(weakSelf);
-    [UIView animateWithDuration:BannerSwipeUpTime animations:^{
-        for (UIView *view in weakSelf.subviews) {
-            CGRect frame = view.frame;
-            [view removeConstraints:view.constraints];
-            view.frame = frame;
-        }
-        [weakSelf removeConstraints:self.constraints];
-        weakSelf.frame = CGRectMake(0, 0, ScreenWidth, 0);
-    } completion:^(BOOL finished) {
-        weakSelf.frame = CGRectMake(0, 0, ScreenWidth, 0);
-        [weakSelf removeFromSuperview];
-        for (UIWindow *window in [[UIApplication sharedApplication] windows]) {
-            if ([window isKindOfClass:[EBBannerView class]]) {
-                window.hidden = YES;
-                [window resignKeyWindow];
-                [window removeFromSuperview];
-            }
-        }
-        SharedBannerView = nil;
-    }];
+    if (self.isRemoved) {
+
+    } else {
+        self.isRemoved = YES;
+         [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+        WEAK_SELF(weakSelf);
+        [UIView animateWithDuration:BannerSwipeUpTime animations:^{
+            weakSelf.frame = CGRectMake(0, 0, ScreenWidth, 0);
+        } completion:^(BOOL finished) {
+            weakSelf.frame = CGRectMake(0, 0, ScreenWidth, 0);
+        }];
+    }
 }
 
 +(UIViewController *)appRootViewController{

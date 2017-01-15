@@ -1,18 +1,25 @@
 
 //  Copyright © 2016年 57380422@qq.com. All rights reserved.
 
-//  version 1.0.7
 
 #import <Foundation/Foundation.h>
+#import "EBBannerView.h"
 
 extern NSString *const EBBannerViewDidClick;    //监听点击弹窗的事件
+extern NSString * EBBannerViewTimeText;    //默认弹窗时间 default banner time
 
 @interface EBForeNotification : NSObject
-+(void)handleRemoteNotification:(NSDictionary*)userInfo soundID:(int)soundID;
-+(void)handleRemoteNotification:(NSDictionary*)userInfo customSound:(NSString*)soundName;
+
++(void)showBannerWithUserInfo:(NSDictionary*)userInfo soundID:(int)soundID;
++(void)showBannerWithUserInfo:(NSDictionary*)userInfo customSound:(NSString*)soundName;
+
++(void)showBannerWithUserInfo:(NSDictionary*)userInfo customBanner:(EBBannerView*)banner soundID:(int)soundID ;
++(void)showBannerWithUserInfo:(NSDictionary*)userInfo customBanner:(EBBannerView*)banner customSound:(NSString*)soundName;
+
++(void)setBannerViewTimeText:(NSString*)timeText;
+
 @end
 
-static NSString *const EBBannerViewTimeText = @"现在";    //默认弹窗时间 default banner time
 
 
 /*

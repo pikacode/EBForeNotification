@@ -15,25 +15,25 @@
 
 @implementation AppDelegate
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo { 
-    [EBForeNotification handleRemoteNotification:userInfo soundID:1312];
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [EBForeNotification showBannerWithUserInfo:userInfo soundID:1312];
 }
 
 //ios7 only
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {    
-    [EBForeNotification handleRemoteNotification:userInfo soundID:1312];
+    [EBForeNotification showBannerWithUserInfo:userInfo soundID:1312];
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dddd:) name:EBBannerViewDidClick object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bannerDidClick:) name:EBBannerViewDidClick object:nil];
     
     return YES;
 }
 
--(void)dddd:(NSNotification*)noti{
-    NSLog(@"ddd,%@",noti);
+-(void)bannerDidClick:(NSNotification*)noti{
+    NSLog(@"\nbanner did click,handle userInfo here");
 }
 
 @end

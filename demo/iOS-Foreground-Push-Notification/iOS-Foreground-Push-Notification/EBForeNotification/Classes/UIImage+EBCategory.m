@@ -6,9 +6,9 @@
 //  Copyright © 2016年 57380422@qq.com. All rights reserved.
 //
 
-#import "UIImage+ColorAtPoint.h"
+#import "UIImage+EBCategory.h"
 
-@implementation UIImage (ColorAtPoint)
+@implementation UIImage (EBCategory)
 
 +(UIColor *)colorAtPoint:(CGPoint)point{
     UIWindow *screenWindow = [[UIApplication sharedApplication] keyWindow];

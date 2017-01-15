@@ -6,9 +6,9 @@
 //  Copyright © 2016年 57380422@qq.com. All rights reserved.
 //
 
-#import "UILabel+ContentSize.h"
+#import "UILabel+EBCategory.h"
 
-@implementation UILabel (ContentSize)
+@implementation UILabel (EBCategory)
 -(CGSize)caculatedSize{
     CGSize size = CGSizeMake(self.frame.size.width, MAXFLOAT);
 

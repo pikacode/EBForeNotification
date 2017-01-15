@@ -12,10 +12,8 @@
 #define BannerSwipeUpTime 0.3
 #define BannerSwipeDownTime 0.3
 
-
 @interface EBBannerView : UIWindow
-@property (nonatomic, retain)NSDictionary *userInfo;
--(void)removeWithAnimation;
-@end
 
-static EBBannerView *SharedBannerView;
+@property (nonatomic, retain)NSDictionary *userInfo;
+
+@end

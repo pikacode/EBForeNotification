@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UILabel (ContentSize)
+@interface UILabel (EBCategory)
 -(CGSize)caculatedSize;
 @end
