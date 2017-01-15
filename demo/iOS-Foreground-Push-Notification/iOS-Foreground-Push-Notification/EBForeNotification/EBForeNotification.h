@@ -6,15 +6,13 @@
 #import "EBBannerView.h"
 
 extern NSString *const EBBannerViewDidClick;    //监听点击弹窗的事件
-extern NSString * EBBannerViewTimeText;    //默认弹窗时间 default banner time
+static NSString * EBBannerViewTimeText = @"现在";    //默认弹窗时间 default banner time
 
 @interface EBForeNotification : NSObject
 
 +(void)showBannerWithUserInfo:(NSDictionary*)userInfo soundID:(int)soundID;
-+(void)showBannerWithUserInfo:(NSDictionary*)userInfo customSound:(NSString*)soundName;
 
-+(void)showBannerWithUserInfo:(NSDictionary*)userInfo customBanner:(EBBannerView*)banner soundID:(int)soundID ;
-+(void)showBannerWithUserInfo:(NSDictionary*)userInfo customBanner:(EBBannerView*)banner customSound:(NSString*)soundName;
++(void)showBannerWithUserInfo:(NSDictionary*)userInfo customSound:(NSString*)soundName;
 
 +(void)setBannerViewTimeText:(NSString*)timeText;
 

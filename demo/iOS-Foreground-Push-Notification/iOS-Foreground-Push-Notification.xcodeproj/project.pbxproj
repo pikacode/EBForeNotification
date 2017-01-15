@@ -15,8 +15,6 @@
 		0D7107FA1D4B909D00EACCCE /* EBBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7107F31D4B909D00EACCCE /* EBBannerView.h */; };
 		0D7107FB1D4B909D00EACCCE /* EBBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7107F41D4B909D00EACCCE /* EBBannerView.m */; };
 		0D7107FD1D4B909D00EACCCE /* EBForeNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7107F61D4B909D00EACCCE /* EBForeNotification.m */; };
-		0D7107FE1D4B909D00EACCCE /* UIImage+EBCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7107F71D4B909D00EACCCE /* UIImage+EBCategory.h */; };
-		0D7107FF1D4B909D00EACCCE /* UIImage+EBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7107F81D4B909D00EACCCE /* UIImage+EBCategory.m */; };
 		0D7108001D4B909D00EACCCE /* EBForeNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7107F91D4B909D00EACCCE /* EBForeNotification.h */; };
 		0D8698411D40989000AEE574 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8698401D40989000AEE574 /* main.m */; };
 		0D8698441D40989000AEE574 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8698431D40989000AEE574 /* AppDelegate.m */; };
@@ -47,8 +45,6 @@
 		0D7107F31D4B909D00EACCCE /* EBBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBannerView.h; sourceTree = "<group>"; };
 		0D7107F41D4B909D00EACCCE /* EBBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBBannerView.m; sourceTree = "<group>"; };
 		0D7107F61D4B909D00EACCCE /* EBForeNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBForeNotification.m; sourceTree = "<group>"; };
-		0D7107F71D4B909D00EACCCE /* UIImage+EBCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EBCategory.h"; sourceTree = "<group>"; };
-		0D7107F81D4B909D00EACCCE /* UIImage+EBCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EBCategory.m"; sourceTree = "<group>"; };
 		0D7107F91D4B909D00EACCCE /* EBForeNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBForeNotification.h; sourceTree = "<group>"; };
 		0D86983C1D40989000AEE574 /* iOS-Foreground-Push-Notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Foreground-Push-Notification.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D8698401D40989000AEE574 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,8 +108,6 @@
 				0D7107F31D4B909D00EACCCE /* EBBannerView.h */,
 				0D7107F41D4B909D00EACCCE /* EBBannerView.m */,
 				0DB4619F1D6C888E00A4F924 /* EBBannerView.xib */,
-				0D7107F71D4B909D00EACCCE /* UIImage+EBCategory.h */,
-				0D7107F81D4B909D00EACCCE /* UIImage+EBCategory.m */,
 				0D10E0BA1D51C4D700DE58D2 /* UILabel+EBCategory.h */,
 				0D10E0BB1D51C4D700DE58D2 /* UILabel+EBCategory.m */,
 				0D0EF7651D6C980F006CCCFF /* EBMute.mp3 */,
@@ -199,7 +193,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D7107FE1D4B909D00EACCCE /* UIImage+EBCategory.h in Headers */,
 				0D7108001D4B909D00EACCCE /* EBForeNotification.h in Headers */,
 				0D7107FA1D4B909D00EACCCE /* EBBannerView.h in Headers */,
 				0DB461A51D6C8C1600A4F924 /* EBMuteDetector.h in Headers */,
@@ -299,7 +292,6 @@
 				0D7107FB1D4B909D00EACCCE /* EBBannerView.m in Sources */,
 				0D8698441D40989000AEE574 /* AppDelegate.m in Sources */,
 				0D8698411D40989000AEE574 /* main.m in Sources */,
-				0D7107FF1D4B909D00EACCCE /* UIImage+EBCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

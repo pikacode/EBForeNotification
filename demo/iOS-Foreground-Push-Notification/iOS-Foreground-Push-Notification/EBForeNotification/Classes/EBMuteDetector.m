@@ -47,7 +47,7 @@ void EBSoundMuteNotificationCompletionProc(SystemSoundID  ssID,void* clientData)
     return sharedDetecotr;
 }
 
--(void)detectComplete:(void (^)(BOOL isMute))completionHandler{
+-(void)detectCompletion:(void (^)(BOOL isMute))completionHandler{
     self.interval = [NSDate timeIntervalSinceReferenceDate];
     AudioServicesPlaySystemSound(self.soundId);
     self.completeBlock = completionHandler;

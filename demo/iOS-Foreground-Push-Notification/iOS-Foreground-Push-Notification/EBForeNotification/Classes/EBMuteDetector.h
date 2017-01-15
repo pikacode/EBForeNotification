@@ -11,6 +11,6 @@
 
 +(EBMuteDetector*)sharedDetecotr;
 
--(void)detectComplete:(void (^)(BOOL isMute))completionHandler;
+-(void)detectCompletion:(void (^)(BOOL isMute))completionHandler;
 
 @end
