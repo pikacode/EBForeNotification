@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "EBForeNotification"
-  s.version      = "1.0.7"
-  s.summary      = "iOS 前台推送及事件处理。iOS Foreground Push Notification and event-handle."
+  s.version      = "1.0.8"
+  s.summary      = "不再更新，请使用新库 EBBannerView，经重写含更多强大功能。No more update, use new pod ‘EBBannerView’, more powerfull/features github.com/pikacode/EBBannerView"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-在 App 处于前台时展示跟系统完全一样的推送弹窗和声音。获取推送内容，并处理点击事件。iOS Foreground Push Notification, the same as the system style, both Banner and Sound.
+不再更新，请使用新库 EBBannerView，经过重写包含更多强大功能，提供 iOS9/10/11 样式，更可自定义。No more update, please use new pod ‘EBBannerView’, more powerfull and more features https://github.com/pikacode/EBBannerView
                    DESC
 
   s.homepage     = "https://github.com/Yasashi/EBForeNotification"
@@ -109,7 +109,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-   s.resources = "EBForeNotification/Classes/*.{xib,mp3}"
+   #s.resources = "EBForeNotification/Classes/*.{xib,mp3}"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -121,7 +121,7 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "SomeFramework"
-   s.frameworks = "UIKit", "Foundation", "AudioToolbox"
+   s.frameworks = "Foundation"
 
    s.library   = "objc"
   # s.libraries = "iconv", "xml2"
